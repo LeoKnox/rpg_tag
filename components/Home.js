@@ -3,6 +3,7 @@ import { useState } from "react";
 export default Home = () => {
   const gridStyle = {
     color: "blue",
+    gridTemplateRows: "repeat(3, 1fr)",
     gridTemplateColumns: "repeat(3, 1fr)",
   };
   const playersState = [
