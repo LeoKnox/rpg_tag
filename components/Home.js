@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default Home = () => {
   const [columns, setColumns] = useState(3);
-  const [test, setTest] = useState([1,2,3,4,5,6])
+  const [test, setTest] = useState([1, 2, 3, 4, 5, 6]);
   const gridStyle = {
     color: "blue",
     gridTemplateColumns: `repeat(${columns}, 1fr)`,
@@ -31,11 +31,13 @@ export default Home = () => {
   return (
     <div>
       <h3>Home Page</h3>
+      <div  className="column" style={gridStyle}>
       {test.map((t) => (
-      <div className="column" style={gridStyle}>
-        {t}
+        <div>
+          {t}
+        </div>
+      ))}
       </div>
-))}
     </div>
   );
 };
