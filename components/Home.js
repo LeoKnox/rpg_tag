@@ -35,6 +35,9 @@ export default Home = () => {
         {test.map((t) => (
           <div id={t % test.length}>{t}</div>
         ))}
+        <div style={{gridTemplateColumns: "repeat(5, 1fr)"}}>
+          y
+          </div>
       </div>
     </div>
   );
