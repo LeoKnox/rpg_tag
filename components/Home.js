@@ -31,12 +31,10 @@ export default Home = () => {
   return (
     <div>
       <h3>Home Page</h3>
-      <div  className="column" style={gridStyle}>
-      {test.map((t) => (
-        <div>
-          {t}
-        </div>
-      ))}
+      <div className="column" style={gridStyle}>
+        {test.map((t) => (
+          <div id={t % test.length}>{t}</div>
+        ))}
       </div>
     </div>
   );
