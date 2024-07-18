@@ -1,9 +1,10 @@
 import { useState } from "react";
 
 export default Home = () => {
-  const [columns, setColumns] = useState(4);
+  const [columns, setColumns] = useState(2);
   const gridStyle = {
     color: "blue",
+    gridTemplateColumns: `repeat(${columns}, 1fr)`,
     gridTemplateColumns: `repeat(${columns}, 1fr)`,
   };
   const playersState = [
