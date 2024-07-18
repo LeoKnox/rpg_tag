@@ -32,13 +32,13 @@ export default Home = () => {
   return (
     <div>
       <h3>Home Page</h3>
-      <FloorMap />
+      {columns ? <FloorMap /> :
       <div className="column" style={gridStyle}>
         {test.map((t) => (
           <div id={t % test.length}>{t}</div>
         ))}
       </div>
-      <div style={{ gridTemplateColumns: "(5, 1fr)" }}>y</div>
+}
     </div>
   );
 };
