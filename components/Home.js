@@ -1,11 +1,12 @@
 import { useState } from "react";
 
 export default Home = () => {
-  const [columns, setColumns] = useState(2);
+  const [columns, setColumns] = useState(3);
+  const [test, setTest] = useState([1,2,3,4,5,6])
   const gridStyle = {
     color: "blue",
     gridTemplateColumns: `repeat(${columns}, 1fr)`,
-    gridTemplateColumns: `repeat(${columns}, 1fr)`,
+    //gridTemplateRows: `repeat(${columns}, 1fr)`,
   };
   const playersState = [
     { id: 1, gridArea: "4/5", hp: 18, type: "user", token: "赤", name: "Aka" },
@@ -30,16 +31,11 @@ export default Home = () => {
   return (
     <div>
       <h3>Home Page</h3>
+      {test.map((t) => (
       <div className="column" style={gridStyle}>
-        <div className="aDiv item">x</div>
-        <div className="bDiv item">x</div>
-        <div className="aDiv item">x</div>
-        <div className="bDiv item">x</div>
-        <div className="aDiv item">x</div>
-        <div className="bDiv item">x</div>
-        <div className="aDiv item">x</div>
-        <div className="bDiv item">x</div>
+        {t}
       </div>
+))}
     </div>
   );
 };
