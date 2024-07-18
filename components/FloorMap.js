@@ -1,9 +1,10 @@
 export default FloorMap = () => {
   let roomOne = {
+    position: "relative",
     height: "100px",
     width: "75px",
     top: "150px",
-    left: "610px",
+    left: "60px",
   };
   return (
     <>
