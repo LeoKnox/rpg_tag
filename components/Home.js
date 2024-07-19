@@ -1,5 +1,5 @@
 import { useState } from "react";
-import FloorMap from "./FloorMap.js";
+import {FloorMap} from "./FloorMap.js";
 
 export default Home = () => {
   const [columns, setColumns] = useState(3);
@@ -32,13 +32,15 @@ export default Home = () => {
   return (
     <div>
       <h3>Home Page</h3>
-      {columns ? <FloorMap /> :
-      <div className="column" style={gridStyle}>
-        {test.map((t) => (
-          <div id={t % test.length}>{t}</div>
-        ))}
-      </div>
-}
+      {columns ? (
+        <FloorMap />
+      ) : (
+        <div className="column" style={gridStyle}>
+          {test.map((t) => (
+            <div id={t % test.length}>{t}</div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
