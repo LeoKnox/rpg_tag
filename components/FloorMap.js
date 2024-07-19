@@ -15,10 +15,18 @@ export default FloorMap = () => {
     left: "150px",
     border: "3px solid green",
   };
+  const changeRoom = (x) => {
+    let newVal = x + parseInt(roomOne.width.slice(0, -2));
+    roomOne.width = newVal + "px";
+    alert(roomOne.width);
+  };
   return (
     <>
       <p>Floor Map</p>
-      <p>One {roomOne.height} <button>change</button></p>
+      <p>
+        One {roomOne.height}{" "}
+        <button onClick={() => changeRoom(10)}>change</button>
+      </p>
       <p style={roomOne}>h</p>
       <p style={roomTwo}>h</p>
     </>
