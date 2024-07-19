@@ -1,4 +1,4 @@
-export const FloorMap = () => {
+export default FloorMap = () => {
   let roomOne = {
     position: "absolute",
     height: "100px",
