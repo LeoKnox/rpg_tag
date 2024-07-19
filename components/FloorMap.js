@@ -18,6 +18,7 @@ export default FloorMap = () => {
   return (
     <>
       <p>Floor Map</p>
+      <p>One {roomOne.height} <button>change</button></p>
       <p style={roomOne}>h</p>
       <p style={roomTwo}>h</p>
     </>
