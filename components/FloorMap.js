@@ -1,4 +1,4 @@
-export default FloorMap = () => {
+export const FloorMap = () => {
   let roomOne = {
     position: "absolute",
     height: "100px",
@@ -17,8 +17,9 @@ export default FloorMap = () => {
   };
   const changeRoom = (x) => {
     let newVal = x + parseInt(roomOne.width.slice(0, -2));
+
     roomOne.width = newVal + "px";
-    alert(roomOne.width);
+    alert(newVal);
   };
   return (
     <>
