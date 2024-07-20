@@ -1,9 +1,10 @@
 export default FloorMap = () => {
   let level = {
+    position: "absolute",
     border: "4px solid red",
-  }
+  };
   let roomOne = {
-    position: "relative",
+    position: "absolute",
     height: "100px",
     width: "75px",
     top: "150px",
@@ -11,7 +12,7 @@ export default FloorMap = () => {
     border: "3px solid black",
   };
   let roomTwo = {
-    position: "relative",
+    position: "absolute",
     height: "100px",
     width: "75px",
     top: "170px",
