@@ -1,6 +1,9 @@
 export default FloorMap = () => {
+  let level = {
+    border: "4px solid red",
+  }
   let roomOne = {
-    position: "absolute",
+    position: "relative",
     height: "100px",
     width: "75px",
     top: "150px",
@@ -8,7 +11,7 @@ export default FloorMap = () => {
     border: "3px solid black",
   };
   let roomTwo = {
-    position: "absolute",
+    position: "relative",
     height: "100px",
     width: "75px",
     top: "170px",
@@ -22,7 +25,7 @@ export default FloorMap = () => {
     alert(newVal);
   };
   return (
-    <>
+    <div style={level}>
       <p>Floor Map</p>
       <p>
         One {roomOne.height}{" "}
@@ -30,6 +33,6 @@ export default FloorMap = () => {
       </p>
       <div style={roomOne}>h</div>
       <div style={roomTwo}>h</div>
-    </>
+    </div>
   );
 };
