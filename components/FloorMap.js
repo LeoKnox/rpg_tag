@@ -11,8 +11,8 @@ export default FloorMap = () => {
     position: "absolute",
     height: "100px",
     width: "75px",
-    top: "50px",
-    left: "150px",
+    top: "170px",
+    left: "80px",
     border: "3px solid green",
   };
   const changeRoom = (x) => {
@@ -28,8 +28,8 @@ export default FloorMap = () => {
         One {roomOne.height}{" "}
         <button onClick={() => changeRoom(10)}>change</button>
       </p>
-      <p style={roomOne}>h</p>
-      <p style={roomTwo}>h</p>
+      <div style={roomOne}>h</div>
+      <div style={roomTwo}>h</div>
     </>
   );
 };
