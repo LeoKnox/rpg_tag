@@ -32,7 +32,8 @@ export default FloorMap = () => {
       left: "70px",
       border: "3px solid black",
     });
-    alert(JSON.stringify(roomOne));
+    roomTwo.top = "200px";
+    alert(JSON.stringify(roomTwo.top));
   };
   return (
     <div style={level}>
