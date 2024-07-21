@@ -24,14 +24,10 @@ export default FloorMap = () => {
   const changeRoom = (x) => {
     let newVal = x + parseInt(roomOne.width.slice(0, -2));
 
-    setRoomOne({
-      position: "absolute",
-      height: "100px",
-      width: "75px",
-      top: "150px",
-      left: "70px",
-      border: "3px solid black",
-    });
+    setRoomOne((roomOne) => ({
+      ...roomOne,
+      top: "180px",
+    }));
     roomTwo.top = "200px";
     alert(JSON.stringify(roomTwo.top));
   };
