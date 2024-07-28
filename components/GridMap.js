@@ -10,8 +10,7 @@ export default GridMap = () => {
   };
   const roomStyle1 = {
     border: "2px solid darkblue",
-    gridColumn: "1/  4",
-    gridRow: "1",
+    gridArea: "1/ 1/ span 2/ span 3",
   };
   const roomStyle2 = {
     border: "2px solid darkblue",
