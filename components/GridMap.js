@@ -1,10 +1,10 @@
-import {useState} from "react";
+import { useState } from "react";
 
 export default GridMap = () => {
-const [useColor, setUseColor] = useState("red");
+  const [useColor, setUseColor] = useState("green");
   const gridMapStyle = {
     border: "2px solid red",
-    color: {useColor},
+    color: useColor,
   };
   return (
     <div style={gridMapStyle}>
