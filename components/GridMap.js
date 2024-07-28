@@ -5,7 +5,7 @@ export default GridMap = () => {
   const [useColumn, setUseColumn] = useState(2);
   const gridMapStyle = {
     display: "grid",
-    gridTemplateColumns: `${useColumn}fr 1fr 1fr`,
+    //gridTemplateColumns: `${useColumn}fr 1fr 1fr`,
     color: useColor,
   };
   const roomStyle1 = {
@@ -15,6 +15,7 @@ export default GridMap = () => {
   const roomStyle2 = {
     border: "2px solid darkblue",
     gridColumn: "3",
+    gridRow:"2",
   };
   return (
     <div style={gridMapStyle}>
