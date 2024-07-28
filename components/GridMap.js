@@ -10,7 +10,8 @@ export default GridMap = () => {
   };
   const roomStyle = {
     border: "2px solid darkblue",
-  }
+    gridColumn: "1",
+  };
   return (
     <div style={gridMapStyle}>
       <div style={roomStyle}>Grid Map</div>
