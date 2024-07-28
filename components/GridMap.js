@@ -6,6 +6,7 @@ export default GridMap = () => {
   const gridMapStyle = {
     display: "grid",
     gridTemplateColumns: "repeat(20, 1fr)",
+    gridTemplateRows: "repeat(20, 1fr)",
     color: useColor,
     aspectRatio: "1",
     width: "600px",
@@ -19,7 +20,7 @@ export default GridMap = () => {
   const roomStyle2 = {
     border: "2px solid darkblue",
     gridColumn: "5/ span 3",
-    gridRow: "8/ span 12",
+    gridRow: "8/ span 2",
   };
   return (
     <div style={gridMapStyle}>
