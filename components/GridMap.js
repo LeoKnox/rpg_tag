@@ -27,7 +27,12 @@ export default GridMap = () => {
   return (
     <div style={gridMapStyle}>
       {gridMap.map((room) => (
-        <div style={{gridAra:`${room.x}/  ${room.y}/ ${room.width}/ ${room.height}`}}>
+        <div
+          style={{
+            gridArea: `${room.x}/  ${room.y}/ ${room.width}/ ${room.height}`,
+            border: "2px solid darkblue",
+          }}
+        >
           {room.id}
         </div>
       ))}
