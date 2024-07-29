@@ -15,7 +15,7 @@ export default GridMap = () => {
   };
   const roomStyle1 = {
     border: "2px solid darkblue",
-    gridArea: "3/ 1/  4/ 3",
+    gridArea: `3/ ${useColumn}/ 4/ 4`,
   };
   const roomStyle2 = {
     border: "2px solid darkblue",
