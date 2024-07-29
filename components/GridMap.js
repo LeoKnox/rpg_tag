@@ -18,12 +18,11 @@ export default GridMap = () => {
   };
   const roomStyle1 = {
     border: "2px solid darkblue",
-    gridArea: `${gridMap.x}/ ${gridMap.width}/ ${gridMap.y}/ ${gridMap.height}`,
+    gridArea: `${gridMap.x}/  ${gridMap.y}/ span${gridMap.width}/ span ${gridMap.height}`,
   };
   const roomStyle2 = {
     border: "2px solid darkblue",
-    gridColumn: "5/ span 3",
-    gridRow: "8/ span 2",
+    gridArea: "1/7/span 5/ span 5",
   };
   return (
     <div style={gridMapStyle}>
