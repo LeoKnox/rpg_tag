@@ -5,7 +5,7 @@ export default GridMap = () => {
   const [useColor, setUseColor] = useState("blue");
   const [useColumn, setUseColumn] = useState(2);
   const [gridMap, setGridMap] = useState(divGridData);
-  console.log(gridMap);
+
   const gridMapStyle = {
     display: "grid",
     gridTemplateColumns: "repeat(20, 1fr)",
@@ -26,6 +26,7 @@ export default GridMap = () => {
   };
   return (
     <div style={gridMapStyle}>
+      <img src={"./test_floor.png"} />
       {gridMap.map((room) => (
         <div
           style={{
