@@ -26,11 +26,12 @@ export default GridMap = () => {
   };
   return (
     <div style={gridMapStyle}>
-      <img src={"./test_floor.png"} />
       {gridMap.map((room) => (
         <div
           style={{
-            gridArea: `${room.x}/  ${room.y}/ span ${room.width}/ span ${room.height}`,
+            gridArea: `${room.x}/  ${room.y + useColumn}/ span ${
+              room.width
+            }/ span ${room.height}`,
             border: `2px solid ${room.color || "darkblue"}`,
           }}
         >
