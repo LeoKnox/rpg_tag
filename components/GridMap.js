@@ -30,7 +30,7 @@ export default GridMap = () => {
         <div
           style={{
             gridArea: `${room.x}/  ${room.y}/ ${room.width}/ ${room.height}`,
-            border: "2px solid darkblue",
+            border: `2px solid ${room.color || "darkblue"}`,
           }}
         >
           {room.id}
