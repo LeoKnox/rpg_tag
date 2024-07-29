@@ -26,8 +26,11 @@ export default GridMap = () => {
   };
   return (
     <div style={gridMapStyle}>
-      <div style={roomStyle1}>Grid Map</div>
-      <div style={roomStyle2}>Grid Two</div>
+      {gridMap.map((room) => (
+        <div style={`${room.x}/  ${room.y}/ ${room.width}/ ${room.height}`}>
+          {room.id}
+          </div>
+      ))}
     </div>
   );
 };
