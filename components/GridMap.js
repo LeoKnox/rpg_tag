@@ -8,8 +8,10 @@ export default GridMap = () => {
 
   const changeMap = (id = 0) => {
     setGridMap(
-      gridMap.map((room) => (room.id === id ? { ...room, room.width: 8 } : room))
-    )
+      gridMap.map((room) =>
+        room.id !== id ? alert(JSON.stringify(room)) : room
+      )
+    );
   };
 
   const gridMapStyle = {
