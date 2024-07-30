@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { divGridData } from "./divGridData.js";
+import { divGridData, changeMap } from "./divGridData.js";
 
 export default GridMap = () => {
   const [useColor, setUseColor] = useState("blue");
-  const [useColumn, setUseColumn] = useState(2);
+  const [dungeonOffset, setDungeonOffset] = useState(2);
   const [gridMap, setGridMap] = useState(divGridData);
 
   const gridMapStyle = {
@@ -25,19 +25,22 @@ export default GridMap = () => {
     gridArea: "4/2/span 5/ span 5",
   };
   return (
-    <div style={gridMapStyle}>
-      {gridMap.map((room) => (
-        <div
-          style={{
-            gridArea: `${room.x}/  ${room.y + useColumn}/ span ${
-              room.width
-            }/ span ${room.height}`,
-            border: `2px solid ${room.color || "darkblue"}`,
-          }}
-        >
-          {room.id}
-        </div>
-      ))}
+    <div>
+      <button onClick={changeMap}>change</button>
+      <div style={gridMapStyle}>
+        {gridMap.map((room) => (
+          <div
+            style={{
+              gridArea: `${room.x}/  ${room.y + dungeonOffset}/ span ${
+                room.width
+              }/ span ${room.height}`,
+              border: `2px solid ${room.color || "darkblue"}`,
+            }}
+          >
+            {room.id}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
