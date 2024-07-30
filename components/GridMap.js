@@ -1,10 +1,14 @@
 import { useState } from "react";
-import { divGridData, changeMap } from "./divGridData.js";
+import { divGridData } from "./divGridData.js";
 
 export default GridMap = () => {
   const [useColor, setUseColor] = useState("blue");
   const [dungeonOffset, setDungeonOffset] = useState(2);
   const [gridMap, setGridMap] = useState(divGridData);
+
+  const changeMap = () => {
+    setDungeonOffset(3);
+  };
 
   const gridMapStyle = {
     display: "grid",
