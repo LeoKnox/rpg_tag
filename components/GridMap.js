@@ -6,9 +6,10 @@ export default GridMap = () => {
   const [dungeonOffset, setDungeonOffset] = useState(2);
   const [gridMap, setGridMap] = useState(divGridData);
 
-  const changeMap = (id = 0) => {
+  const changeMap = (id = "0") => {
+    //alert(`${gridMap[0].id} = ${id}`);
     setGridMap(
-      gridMap.map((room) => (room.id == id ? (room.width = 8) : room))
+      gridMap.map((room) => (parseInt(room.id) == id ? (room.width = 8) : room))
     );
   };
 
