@@ -6,8 +6,8 @@ export default GridMap = () => {
   const [dungeonOffset, setDungeonOffset] = useState(2);
   const [gridMap, setGridMap] = useState(divGridData);
 
-  const changeMap = () => {
-    setDungeonOffset(3);
+  const changeMap = (id = 0) => {
+    setDungeonGridMap(gridMap.map(item => item.id === id ? {...item, item.width: 8} : item))
   };
 
   const gridMapStyle = {
