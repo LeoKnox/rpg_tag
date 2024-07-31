@@ -10,7 +10,7 @@ export default GridMap = () => {
   const changeMap = (id) => {
     id = 0;
     //alert(`${gridMap[0].id} = ${id}`);
-    setGridMap(gridMap.map((room) => (room.id == id ? return(room.x= 8) : room));
+    setGridMap(gridMap.map((room) => (room.id == id ? return({...room.x: 8}) : room));
   };
 
   const gridMapStyle = {
