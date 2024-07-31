@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { divGridData } from "./divGridData.js";
+import DivGradMap from "./DivGridMap.js";
 
 export default GridMap = () => {
   const [useColor, setUseColor] = useState("blue");
@@ -10,7 +11,7 @@ export default GridMap = () => {
     id = 0;
     //alert(`${gridMap[0].id} = ${id}`);
     setGridMap(
-      gridMap.map((room) => (room.id == id ? (room.width = 1) : room))
+      gridMap.map((room) => (room.id == id ? (room.color = "red") : room))
     );
   };
 
@@ -36,6 +37,7 @@ export default GridMap = () => {
     <div>
       <button onClick={changeMap}>change</button>
       <div style={gridMapStyle}>
+        <DivGridMap />
         {gridMap.map((room) => (
           <div
             style={{
