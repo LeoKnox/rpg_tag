@@ -9,11 +9,9 @@ export default GridMap = () => {
 
   const changeMap = (id) => {
     id = 0;
+    const newRoom = gridMap.map((room) => (room.id == id ? (...room.x= 8) : room)
     //alert(`${gridMap[0].id} = ${id}`);
-    setGridMap(room => ({
-      ...room,
-      room[id].width = 8
-    }));
+    setGridMap(newRoom);
   };
 
   const gridMapStyle = {
