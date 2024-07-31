@@ -39,16 +39,7 @@ export default GridMap = () => {
       <div style={gridMapStyle}>
         <DivGridMap room={gridMap[0]} />
         {gridMap.map((room) => (
-          <div
-            style={{
-              gridArea: `${room.x}/  ${room.y + dungeonOffset}/ span ${
-                room.width
-              }/ span ${room.height}`,
-              border: `2px solid ${room.color || "darkblue"}`,
-            }}
-          >
-            {room.id}
-          </div>
+          <DivGridMap room={room} />
         ))}
       </div>
     </div>
