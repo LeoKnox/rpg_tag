@@ -10,7 +10,7 @@ export default GridMap = () => {
     id = 0;
     //alert(`${gridMap[0].id} = ${id}`);
     setGridMap(
-      gridMap.map((room) => (room.id == id ? (room.width = 8) : room))
+      gridMap.map((room) => (room.id == id ? (room.width = 1) : room))
     );
   };
 
@@ -26,7 +26,7 @@ export default GridMap = () => {
   };
   const roomStyle1 = {
     border: "2px solid darkblue",
-    gridArea: `${gridMap[0].x}/  ${gridMap[0].y}/ ${gridMap[0].width}/ ${gridMap[0].height}`,
+    //gridArea: `${gridMap[0].x}/  ${gridMap[0].y}/ ${gridMap[0].width}/ ${gridMap[0].height}`,
   };
   const roomStyle2 = {
     border: "2px solid darkblue",
