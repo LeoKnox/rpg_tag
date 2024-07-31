@@ -37,7 +37,7 @@ export default GridMap = () => {
     <div>
       <button onClick={changeMap}>change</button>
       <div style={gridMapStyle}>
-        <DivGridMap />
+        <DivGridMap room={gridMap[0]} />
         {gridMap.map((room) => (
           <div
             style={{
