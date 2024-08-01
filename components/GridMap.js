@@ -9,17 +9,13 @@ export default GridMap = () => {
 
   const changeMap = (id) => {
     const newRoom = gridMap.map((room) => {
-      alert(room.id + "+" + parseInt(id));
       if (room.id !== id) {
         return {
           ...room,
           height: 9,
         };
       } else {
-        return {
-          ...room,
-          width: 9,
-        };
+        return room;
       }
     });
     setGridMap(newRoom);
