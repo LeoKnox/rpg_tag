@@ -7,7 +7,7 @@ export default GridMap = () => {
   const [dungeonOffset, setDungeonOffset] = useState(2);
   const [gridMap, setGridMap] = useState(divGridData);
 
-  const changeMap = (id = 0) => {
+  const changeMap = (id) => {
     const newRoom = gridMap.map((room) => {
       alert(room.id + "+" + parseInt(id));
       if (room.id !== id) {
@@ -45,7 +45,7 @@ export default GridMap = () => {
   };
   return (
     <div>
-      <button onClick={changeMap}>change</button>
+      <button onClick={() => changeMap(1)}>change</button>
       <div style={gridMapStyle}>
         <DivGridMap room={gridMap[0]} />
         {gridMap.map((room) => (
