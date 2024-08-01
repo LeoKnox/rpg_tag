@@ -11,8 +11,9 @@ export default GridMap = () => {
     id = 0;
     let newRoom = (room) => ({
       ...room,
-      ...(room.width = 8),
+      ...(room.width: 8),
     });
+    console.log("T");
     console.log(JSON.stringify(newRoom));
   };
 
