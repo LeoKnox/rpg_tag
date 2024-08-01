@@ -9,6 +9,7 @@ export default GridMap = () => {
 
   const changeMap = (id = 0) => {
     const newRoom = gridMap.map((room) => {
+      alert(room.id + "+" + parseInt(id));
       if (room.id !== id) {
         return {
           ...room,
@@ -21,7 +22,6 @@ export default GridMap = () => {
         };
       }
     });
-    alert(JSON.stringify(newRoom));
     setGridMap(newRoom);
   };
 
