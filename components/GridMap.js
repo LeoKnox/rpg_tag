@@ -7,14 +7,18 @@ export default GridMap = () => {
   const [dungeonOffset, setDungeonOffset] = useState(2);
   const [gridMap, setGridMap] = useState(divGridData);
 
-  const changeMap = (id) => {
-    id = 0;
-    let newRoom = (...room) => ({
-      ...room,
-      width: 8,
+  const changeMap = (id = 0) => {
+    const newRoom = gridMap.map((room) => {
+      if (room.id === id) {
+        return room;
+      } else {
+        return {
+          ...room,
+          room: room.width + 50,
+        };
+      }
     });
-    console.log("T");
-    console.log(JSON.stringify(newRoom));
+    setGridMap(newRoom);
   };
 
   const gridMapStyle = {
