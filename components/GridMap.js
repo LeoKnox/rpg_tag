@@ -9,9 +9,8 @@ export default GridMap = () => {
 
   const changeMap = (id) => {
     id = 0;
-    let newRoom = (room) => ({
+    let newRoom = (...room) => ({
       ...room,
-      ...room.width,
       width: 8,
     });
     console.log("T");
