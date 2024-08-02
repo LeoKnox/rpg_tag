@@ -6,7 +6,7 @@ export default GridBuild = () => {
   const [height, setHeight] = useState(5);
   const [x, setx] = useState(5);
   const [y, sety] = useState(5);
-  let room = { width: width, height: 5, x: 1, y: 3 };
+  let room = { width: width, height: height, x: x, y: y };
   const gridMapStyle = {
     display: "grid",
     gridTemplateColumns: "repeat(20, 1fr)",
@@ -32,11 +32,15 @@ export default GridBuild = () => {
           value={width}
         />
         <label>Height: </label>
-        <input type="number" />
+        <input
+          type="number"
+          onChange={(e) => setHeight(e.target.value)}
+          value={height}
+        />
         <label>x: </label>
-        <input type="number" />
+        <input type="number" onChange={(e) => setx(e.target.value)} value={x} />
         <label>y: </label>
-        <input type="number" />
+        <input type="number" onChange={(e) => sety(e.target.value)} value={y} />
       </div>
       <div style={gridMapStyle}>
         <DivGridMap room={room} />
