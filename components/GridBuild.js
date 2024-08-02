@@ -2,11 +2,11 @@ import { useState } from "react";
 import DivBridMap from "./DivGridMap.js";
 
 export default GridBuild = () => {
-  const [width, setWidth] = useState(5);
+  const [width, setWidth] = useState(8);
   const [height, setHeight] = useState(5);
   const [x, setx] = useState(5);
   const [y, sety] = useState(5);
-  let room = { width: 5, length: 5, x: 1, y: 3 };
+  let room = { width: width, height: 5, x: 1, y: 3 };
   const gridMapStyle = {
     display: "grid",
     gridTemplateColumns: "repeat(20, 1fr)",
@@ -34,7 +34,7 @@ export default GridBuild = () => {
         <input type="number" />
       </div>
       <div style={gridMapStyle}>
-      <DivGridMap room={room} />
+        <DivGridMap room={room} />
       </div>
     </div>
   );
