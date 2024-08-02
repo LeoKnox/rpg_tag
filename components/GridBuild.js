@@ -25,7 +25,12 @@ export default GridBuild = () => {
     <div>
       <div style={gridBuildStyle}>
         <label>Width: </label>
-        <input type="number" name="width" value={width} />
+        <input
+          type="number"
+          name="width"
+          onChange={(e) => setWidth(e.target.value)}
+          value={width}
+        />
         <label>Height: </label>
         <input type="number" />
         <label>x: </label>
