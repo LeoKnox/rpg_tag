@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
-import { FloorMap } from "./FloorMap.js";
+import FloorMap from "./FloorMap.js";
+//import GridMap from "./GridMap.js";
+import GridBuild from "./GridBuild.js";
 
 export default Home = () => {
-  const [columns, setColumns] = useState(3);
+  const [columns, setColumns] = useState(1);
   const [test, setTest] = useState([1, 2, 3, 4, 5, 6]);
   const [floor, setFloor] = useState();
   console.log({ setFloor });
-  useEffect(() => {
-    //setFloor({FloorMap});
-  });
+
   const gridStyle = {
     color: "blue",
     gridTemplateColumns: `repeat(${columns}, 1fr)`,
@@ -38,7 +38,7 @@ export default Home = () => {
     <div>
       <h3>Home Page</h3>
       {columns ? (
-        { floor }
+        <GridBuild />
       ) : (
         <div className="column" style={gridStyle}>
           {test.map((t) => (
