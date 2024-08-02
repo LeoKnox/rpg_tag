@@ -7,7 +7,16 @@ export default GridBuild = () => {
   const [x, setx] = useState(5);
   const [y, sety] = useState(5);
   let room = { width: 5, length: 5, x: 1, y: 3 };
-  const gridRoomStyle = {};
+  const gridMapStyle = {
+    display: "grid",
+    gridTemplateColumns: "repeat(20, 1fr)",
+    gridTemplateRows: "repeat(20, 1fr)",
+    color: "red",
+    aspectRatio: "1",
+    width: "600px",
+    height: "600px",
+    border: "1px solid lightblue",
+  };
   const gridBuildStyle = {
     color: "slate",
     width: "5ch",
@@ -24,7 +33,9 @@ export default GridBuild = () => {
         <label>y: </label>
         <input type="number" />
       </div>
+      <div style={gridMapStyle}>
       <DivGridMap room={room} />
+      </div>
     </div>
   );
 };
