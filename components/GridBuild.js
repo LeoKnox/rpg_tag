@@ -6,7 +6,9 @@ export default GridBuild = () => {
   const [height, setHeight] = useState(5);
   const [x, setx] = useState(5);
   const [y, sety] = useState(5);
-  let room = { width: width, height: height, x: x, y: y };
+  const [xOffset, setXOffset] = useState(1);
+  const [isMouseDown, setIsMouseDown] = useState(false);
+  let room = { width: width, height: height, x: x + xOffset, y: y };
   const gridMapStyle = {
     display: "grid",
     gridTemplateColumns: "repeat(20, 1fr)",
@@ -21,9 +23,19 @@ export default GridBuild = () => {
     color: "slate",
     width: "5ch",
   };
+  const handleMouseDown = () => {
+    console.log("aka")
+  }
+  const handleMouseMove = () => {
+    console.log("chiiro")
+  }
+  const handleMouseUp = () => {
+    console.log("ao")
+  }
   return (
     <div>
       <div style={gridBuildStyle}>
+        <p>{xOffset}</p>
         <label>Width: </label>
         <input
           type="number"
@@ -42,7 +54,12 @@ export default GridBuild = () => {
         <label>y: </label>
         <input type="number" onChange={(e) => sety(e.target.value)} value={y} />
       </div>
-      <div style={gridMapStyle}>
+      <div
+        style={gridMapStyle}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+      >
         <DivGridMap room={room} />
       </div>
     </div>
