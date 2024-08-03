@@ -23,14 +23,15 @@ export default GridBuild = () => {
     color: "slate",
     width: "5ch",
   };
-  const handleMouseDown = (event) => {
+  const handleMouseDown = () => {
     setIsMouseDown(true);
   };
-  const handleMouseMove = () => {
+  const handleMouseMove = (event) => {
+    console.log({ event });
     let temp = event.x;
     if (isMouseDown) {
       console.log(temp + "D" + event.x);
-      setXOffset(temp - event.offsetX);
+      setXOffset(temp - event.x);
     }
   };
   const handleMouseUp = () => {
