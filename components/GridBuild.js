@@ -29,7 +29,7 @@ export default GridBuild = () => {
   const handleMouseMove = (event) => {
     let temp = null;
     if (isMouseDown && temp != null) {
-      setXOffset(xOffset + 1);
+      setXOffset(tmep + event.target.x);
     } else {
       temp = event.target.x;
     }
