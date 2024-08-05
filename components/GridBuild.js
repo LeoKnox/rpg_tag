@@ -4,7 +4,7 @@ import DivGridMap from "./DivGridMap.js";
 
 export default GridBuild = () => {
   console.log(roomData());
-  const [divGridData, setDivGridData] = useState(roomData());
+  const [divGridData, setDivGridData] = useState(roomData(5, 10));
   const [width, setWidth] = useState(8);
   const [height, setHeight] = useState(5);
   const [x, setx] = useState(5);
