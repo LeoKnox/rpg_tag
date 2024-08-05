@@ -32,7 +32,7 @@ export default GridBuild = () => {
     let temp = event.clientX;
     if (isMouseDown) {
       console.log(initialPosition + "D" + event.clientX);
-      setXOffset(initialPosition - event.clientX);
+      setXOffset((initialPosition - event.clientX) / 10);
       console.log("not null");
     }
   };
