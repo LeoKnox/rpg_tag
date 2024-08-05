@@ -4,7 +4,6 @@ export let divGridData = [
 ];
 
 export const roomData = (offset) => {
-  {
-    divGridData.map((room) => room);
-  }
+  let x = divGridData.map((room) => room);
+  return x;
 };
