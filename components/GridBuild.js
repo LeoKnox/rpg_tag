@@ -1,7 +1,9 @@
 import { useState } from "react";
-import DivBridMap from "./DivGridMap.js";
+import {divGridData} from "./divGridData.js";
+import DivGridMap from "./DivGridMap.js";
 
 export default GridBuild = () => {
+
   const [width, setWidth] = useState(8);
   const [height, setHeight] = useState(5);
   const [x, setx] = useState(5);
@@ -11,7 +13,7 @@ export default GridBuild = () => {
   const [isMouseDown, setIsMouseDown] = useState(false);
   const [initialXPosition, setInitialXPosition] = useState(0);
   const [initialYPosition, setInitialYPosition] = useState(0);
-  let room = { width: width, height: height, x: x + xOffset, y: y + yOffset };
+  //let room = { width: width, height: height, x: x + xOffset, y: y + yOffset };
   const gridMapStyle = {
     display: "grid",
     gridTemplateColumns: "repeat(20, 1fr)",
@@ -68,7 +70,9 @@ export default GridBuild = () => {
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
       >
-        <DivGridMap room={room} />
+        {divGridData.map((room) => (
+          <DivGridMap room={room} />
+        ))}
       </div>
     </div>
   );
