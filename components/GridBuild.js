@@ -1,9 +1,9 @@
 import { useState } from "react";
-import {divGridData} from "./divGridData.js";
+import { divGridData, roomData } from "./divGridData.js";
 import DivGridMap from "./DivGridMap.js";
 
 export default GridBuild = () => {
-
+  console.log(roomData);
   const [width, setWidth] = useState(8);
   const [height, setHeight] = useState(5);
   const [x, setx] = useState(5);
