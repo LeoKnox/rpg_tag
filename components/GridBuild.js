@@ -8,6 +8,7 @@ export default GridBuild = () => {
   const [y, sety] = useState(5);
   const [xOffset, setXOffset] = useState(1);
   const [isMouseDown, setIsMouseDown] = useState(false);
+  const [initialPosition, setInitialPosition] = useState(0);
   let room = { width: width, height: height, x: x + xOffset, y: y };
   const gridMapStyle = {
     display: "grid",
@@ -24,12 +25,13 @@ export default GridBuild = () => {
     width: "5ch",
   };
   const handleMouseDown = () => {
+    setInitialPosition(event.clientX);
     setIsMouseDown(true);
   };
   const handleMouseMove = (event) => {
     let temp = event.clientX;
     if (isMouseDown) {
-      console.log(temp + "D" + event.clientX);
+      console.log(initialPosition + "D" + event.clientX);
       setXOffset(temp - event.clientX);
       console.log("not null");
     }
