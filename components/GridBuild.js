@@ -14,7 +14,6 @@ export default GridBuild = () => {
   const [isMouseDown, setIsMouseDown] = useState(false);
   const [initialXPosition, setInitialXPosition] = useState(0);
   const [initialYPosition, setInitialYPosition] = useState(0);
-  //let room = { width: width, height: height, x: x + xOffset, y: y + yOffset };
   const gridMapStyle = {
     display: "grid",
     gridTemplateColumns: "repeat(20, 1fr)",
@@ -28,6 +27,9 @@ export default GridBuild = () => {
   const gridBuildStyle = {
     color: "slate",
     width: "5ch",
+  };
+  const roomMouseDown = () => {
+    console.log("heya");
   };
   const handleMouseDown = () => {
     setInitialXPosition(event.clientX);
@@ -72,7 +74,7 @@ export default GridBuild = () => {
         onMouseUp={handleMouseUp}
       >
         {divGridData.map((room) => (
-          <DivGridMap room={room} />
+          <DivGridMap room={room} onMouseDown={roomMouseDown} />
         ))}
       </div>
     </div>
