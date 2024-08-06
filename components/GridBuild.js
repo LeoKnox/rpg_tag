@@ -32,6 +32,7 @@ export default GridBuild = () => {
     console.log("heya");
   };
   const handleMouseDown = (roomId = -1) => {
+    console.log("migi" + roomId);
     if (roomId < 0) {
       setInitialXPosition(event.clientX);
       setInitialYPosition(event.clientY);
@@ -81,7 +82,7 @@ export default GridBuild = () => {
           <DivGridMap
             room={room}
             className="gridBuildRoom"
-            onMouseDown={() => handleMouseDown(room.id)}
+            handleMouseDown={handleMouseDown}
           />
         ))}
       </div>
