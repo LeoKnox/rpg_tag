@@ -31,10 +31,14 @@ export default GridBuild = () => {
   const roomMouseDown = () => {
     console.log("heya");
   };
-  const handleMouseDown = () => {
-    setInitialXPosition(event.clientX);
-    setInitialYPosition(event.clientY);
-    setIsMouseDown(true);
+  const handleMouseDown = (roomId = -1) => {
+    if (roomId < 0) {
+      setInitialXPosition(event.clientX);
+      setInitialYPosition(event.clientY);
+      setIsMouseDown(true);
+    } else {
+      console.log("heya" + roomId);
+    }
   };
   const handleMouseMove = (event) => {
     if (isMouseDown) {
@@ -74,7 +78,11 @@ export default GridBuild = () => {
         onMouseUp={handleMouseUp}
       >
         {divGridData.map((room) => (
-          <DivGridMap room={room} className="gridBuildRoom" onMouseDown={roomMouseDown} />
+          <DivGridMap
+            room={room}
+            className="gridBuildRoom"
+            onMouseDown={() => handleMouseDown(room.id)}
+          />
         ))}
       </div>
     </div>
