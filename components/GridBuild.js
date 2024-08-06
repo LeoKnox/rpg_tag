@@ -74,7 +74,7 @@ export default GridBuild = () => {
         onMouseUp={handleMouseUp}
       >
         {divGridData.map((room) => (
-          <DivGridMap room={room} onMouseDown={roomMouseDown} />
+          <DivGridMap room={room} className="gridBuildRoom" onMouseDown={roomMouseDown} />
         ))}
       </div>
     </div>
