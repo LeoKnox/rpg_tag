@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { roomData } from "./divGridData.js";
 import DivGridMap from "./DivGridMap.js";
 
@@ -36,7 +36,10 @@ export default GridBuild = () => {
     color: "slate",
     width: "5ch",
   };
-  const handleMouseDown = (roomId) => {
+  const handleMouseDown = useCallback((roomId) => {
+    setCurrentRoomId(roomId)
+  }, [currentRoomId])
+  /*const handleMouseDown = (roomId) => {
     console.log("now"+roomId)
     if (roomId >= 0) {
       setCurrentRoomId(roomId)
@@ -47,7 +50,7 @@ export default GridBuild = () => {
     } else {
       console.log("heya" + roomId);
     }
-  };
+  };*/
   const handleMouseMove = (event) => {
     if (isMouseDown) {
       setXOffset(Math.floor((event.clientX - initialXPosition) / 10));
