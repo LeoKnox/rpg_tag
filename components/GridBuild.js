@@ -20,7 +20,7 @@ export default GridBuild = () => {
   useEffect(() => {
   setWidth(divGridData[0].width)
   setHeight(divGridData[0].height)
-  },[])
+  },[divGridData])
   const gridMapStyle = {
     display: "grid",
     gridTemplateColumns: "repeat(20, 1fr)",
@@ -37,6 +37,7 @@ export default GridBuild = () => {
   };
   const handleMouseDown = (roomId) => {
     if (roomId < 0) {
+      setDivGridData(roomId)
       setInitialXPosition(event.clientX);
       setInitialYPosition(event.clientY);
       setIsMouseDown(true);
