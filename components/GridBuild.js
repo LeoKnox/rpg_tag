@@ -37,9 +37,9 @@ export default GridBuild = () => {
     width: "5ch",
   };
   const handleMouseDown = (roomId) => {
-    setCurrentRoomId(roomId)
-    if (roomId < 0) {
-      
+    console.log("now"+roomId)
+    if (roomId >= 0) {
+      setCurrentRoomId(roomId)
       setInitialXPosition(event.clientX);
       setInitialYPosition(event.clientY);
       setIsMouseDown(true);
