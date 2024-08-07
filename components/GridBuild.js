@@ -18,8 +18,8 @@ export default GridBuild = () => {
     setDivGridData(roomData(xOffset,yOffset))
   },[])
   useEffect(() => {
-  setWidth(roomData[0].width)
-  setHieght(roomData[0].height)
+  setWidth(divGridData[0].width)
+  setHeight(divGridData[0].height)
   },[])
   const gridMapStyle = {
     display: "grid",
