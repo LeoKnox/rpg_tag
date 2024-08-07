@@ -89,7 +89,7 @@ export default GridBuild = () => {
           <DivGridMap
             room={room}
             className="gridBuildRoom"
-            handleMouseDown={handleMouseDown}
+            handleMouseDown={() => handleMouseDown()}
           />
         ))}
       </div>
