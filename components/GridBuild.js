@@ -70,7 +70,7 @@ export default GridBuild = () => {
       </div>
       <div
         style={gridMapStyle}
-        onMouseDown={handleMouseDown}
+        onMouseDown={() => handleMouseDown(-1)}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
       >
