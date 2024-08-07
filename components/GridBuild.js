@@ -28,11 +28,7 @@ export default GridBuild = () => {
     color: "slate",
     width: "5ch",
   };
-  const roomMouseDown = () => {
-    console.log("heya");
-  };
-  const handleMouseDown = (roomId = -1) => {
-    console.log("migi" + roomId);
+  const handleMouseDown = (roomId) => {
     if (roomId < 0) {
       setInitialXPosition(event.clientX);
       setInitialYPosition(event.clientY);
