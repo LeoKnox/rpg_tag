@@ -5,6 +5,7 @@ import DivGridMap from "./DivGridMap.js";
 export default GridBuild = () => {
   console.log(roomData());
   const [divGridData, setDivGridData] = useState(roomData(5, 10));
+  const [currentRoomId, setCurrentRoomId] = useState(0);
   const [width, setWidth] = useState(8);
   const [height, setHeight] = useState(5);
   const [x, setx] = useState(5);
@@ -18,9 +19,9 @@ export default GridBuild = () => {
     setDivGridData(roomData(xOffset,yOffset))
   },[])
   useEffect(() => {
-  setWidth(divGridData[0].width)
-  setHeight(divGridData[0].height)
-  },[divGridData])
+  setWidth(divGridData[currentRoomId].width)
+  setHeight(divGridData[currentRoomId].height)
+  },[currentRoomId])
   const gridMapStyle = {
     display: "grid",
     gridTemplateColumns: "repeat(20, 1fr)",
@@ -37,7 +38,7 @@ export default GridBuild = () => {
   };
   const handleMouseDown = (roomId) => {
     if (roomId < 0) {
-      setDivGridData(roomId)
+      setCurrentRoomId(roomId)
       setInitialXPosition(event.clientX);
       setInitialYPosition(event.clientY);
       setIsMouseDown(true);
