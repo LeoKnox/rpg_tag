@@ -92,6 +92,7 @@ export default GridBuild = () => {
           <DivGridMap
             room={room}
             className="gridBuildRoom"
+            setCurrentRoomId = {() => setCurrentRoomId()}
             handleMouseDown={() => handleMouseDown()}
           />
         ))}
