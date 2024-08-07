@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { roomData } from "./divGridData.js";
 import DivGridMap from "./DivGridMap.js";
 
@@ -14,6 +14,13 @@ export default GridBuild = () => {
   const [isMouseDown, setIsMouseDown] = useState(false);
   const [initialXPosition, setInitialXPosition] = useState(0);
   const [initialYPosition, setInitialYPosition] = useState(0);
+  useEffect(() => {
+    setDivGridData(roomData(xOffset,yOffset))
+  },[])
+  useEffect(() => {
+  setWidth(roomData[0].width)
+  setHieght(roomData[1].height)
+  },[])
   const gridMapStyle = {
     display: "grid",
     gridTemplateColumns: "repeat(20, 1fr)",
