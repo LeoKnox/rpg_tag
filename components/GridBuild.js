@@ -19,7 +19,7 @@ export default GridBuild = () => {
   },[])
   useEffect(() => {
   setWidth(roomData[0].width)
-  setHieght(roomData[1].height)
+  setHieght(roomData[0].height)
   },[])
   const gridMapStyle = {
     display: "grid",
