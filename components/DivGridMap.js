@@ -10,7 +10,7 @@ export default DivGridMap = ({ room, setCurrentRoomId, handleMouseDown }) => {
     <div
       className="gridBuildRoom"
       style={roomStyle}
-      onMouseDown={() => setCurrentRoomId(room.id)}
+      onMouseDown={() => handleMouseDown(room.id)}
     >
       {room.id}
     </div>
