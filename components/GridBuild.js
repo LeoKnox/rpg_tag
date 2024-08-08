@@ -36,10 +36,10 @@ export default GridBuild = () => {
     color: "slate",
     width: "5ch",
   };
-  const handleMouseDown = useCallback((roomId) => {
+  /*const handleMouseDown = useCallback((roomId) => {
     setCurrentRoomId(roomId)
-  }, [currentRoomId])
-  /*const handleMouseDown = (roomId) => {
+  }, [currentRoomId])*/
+  const handleMouseDown = (roomId) => {
     console.log("now"+roomId)
     if (roomId >= 0) {
       setCurrentRoomId(roomId)
@@ -50,7 +50,7 @@ export default GridBuild = () => {
     } else {
       console.log("heya" + roomId);
     }
-  };*/
+  };
   const handleMouseMove = (event) => {
     if (isMouseDown) {
       setXOffset(Math.floor((event.clientX - initialXPosition) / 10));
