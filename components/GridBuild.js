@@ -48,7 +48,7 @@ export default GridBuild = () => {
       setIsMouseDown(true);
       
     } else {
-      console.log("heya" + roomId);
+      console.log("heya" );
       //setCurrentRoomId(roomId)
     }
   };
@@ -85,7 +85,7 @@ export default GridBuild = () => {
       </div>
       <div
         style={gridMapStyle}
-        
+        onMouseDown={handleMouseDown(-1)}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
       >
