@@ -49,6 +49,7 @@ export default GridBuild = () => {
       
     } else {
       console.log("heya" + roomId);
+      //setCurrentRoomId(roomId)
     }
   };
   const handleMouseMove = (event) => {
@@ -84,7 +85,7 @@ export default GridBuild = () => {
       </div>
       <div
         style={gridMapStyle}
-        onMouseDown={() => handleMouseDown(-1)}
+        
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
       >
@@ -92,7 +93,7 @@ export default GridBuild = () => {
           <DivGridMap
             room={room}
             className="gridBuildRoom"
-            setCurrentRoomId = {() => setCurrentRoomId()}
+            setCurrentRoomId = {setCurrentRoomId}
             handleMouseDown={() => handleMouseDown()}
           />
         ))}
