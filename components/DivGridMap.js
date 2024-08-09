@@ -5,7 +5,7 @@ export default DivGridMap = ({ room, setCurrentRoomId, handleMouseDown }) => {
   };
   const handleMouse = () => {
     setCurrentRoomId(room.id);
-    handleMouseDown(room.id);
+    //handleMouseDown(5);
   };
   return (
     <div className="gridBuildRoom" style={roomStyle} onMouseDown={handleMouse}>
