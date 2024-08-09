@@ -19,8 +19,8 @@ export default GridBuild = () => {
     setDivGridData(roomData(xOffset,yOffset))
   },[])
   useEffect(() => {
-  setWidth(divGridData[1].width)
-  setHeight(divGridData[1].height)
+  setWidth(divGridData[currentRoomId].width)
+  setHeight(divGridData[currentRoomId].height)
   },[currentRoomId])
   const gridMapStyle = {
     display: "grid",
