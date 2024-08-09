@@ -94,7 +94,7 @@ export default GridBuild = () => {
             room={room}
             className="gridBuildRoom"
             setCurrentRoomId = {setCurrentRoomId}
-            handleMouseDown={() => handleMouseDown()}
+            handleMouseDown={handleMouseDown}
           />
         ))}
       </div>
