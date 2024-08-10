@@ -98,6 +98,8 @@ export default GridBuild = () => {
             className="gridBuildRoom"
             setCurrentRoomId = {setCurrentRoomId}
             handleMouseDown={handleMouseDown}
+            xOffset={xOffset}
+            yOffset={yOffset}
           />
         ))}
       </div>
