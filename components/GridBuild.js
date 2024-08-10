@@ -43,8 +43,8 @@ export default GridBuild = () => {
   };
   const changeValue = (e) => {
     console.log("chv"+e.target.name+":"+e.target.value);
-
-      setWidth(e.target.value)
+ const newRoom = currentRoom;
+ setCurrentRoom({...currentRoom, width: e.target.value})
     
   }
   const handleMouseDown = (event,roomId) => {
