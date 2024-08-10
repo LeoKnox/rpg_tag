@@ -22,8 +22,8 @@ export default GridBuild = () => {
     console.log("cr"+divGridData[currentRoomId.width])
   setWidth(divGridData[currentRoomId].width)
   setHeight(divGridData[currentRoomId].height)
-  setx(divGridData[currentRoomId.x])
-  sety(divGridData[currentRoomId.y])
+  setx(divGridData[currentRoomId].x)
+  sety(divGridData[currentRoomId].y)
   },[currentRoomId])
   const gridMapStyle = {
     display: "grid",
