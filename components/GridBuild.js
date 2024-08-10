@@ -18,7 +18,7 @@ export default GridBuild = () => {
   const [initialYPosition, setInitialYPosition] = useState(0);
   useEffect(() => {
     setDivGridData(roomData(xOffset,yOffset))
-  },[])
+  },[currentRoom])
   useEffect(() => {
     
   setCurrentRoom(divGridData[currentRoomId]);
@@ -41,8 +41,9 @@ export default GridBuild = () => {
     width: "5ch",
   };
   const changeValue = (e) => {
-    
- setCurrentRoom({...currentRoom, [e.target.name]: e.target.value})
+    let newRoom = {...currentRoom, [e.target.name]: e.target.value}
+ setCurrentRoom(newRoom)
+
     
   }
   const handleMouseDown = (event,roomId) => {
