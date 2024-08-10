@@ -6,6 +6,7 @@ export default GridBuild = () => {
   console.log(roomData());
   const [divGridData, setDivGridData] = useState(roomData(5, 10));
   const [currentRoomId, setCurrentRoomId] = useState(0);
+  const [currentRoom, setCurrentRoom] = useState({});
   const [width, setWidth] = useState(8);
   const [height, setHeight] = useState(5);
   const [x, setx] = useState(5);
@@ -20,7 +21,8 @@ export default GridBuild = () => {
   },[])
   useEffect(() => {
     console.log("cr"+divGridData[currentRoomId.width])
-  setWidth(divGridData[currentRoomId].width)
+  //setWidth(divGridData[currentRoomId].width)
+  setCurrentRoom(currentRoom.width=divGridData[currentRoomId].width);
   setHeight(divGridData[currentRoomId].height)
   setx(divGridData[currentRoomId].x)
   sety(divGridData[currentRoomId].y)
@@ -75,7 +77,7 @@ export default GridBuild = () => {
           type="number"
           name="width"
           onChange={changeValue}
-          value={width}
+          value={currentRoom.width}
         />
         <label>Height: </label>
         <input
