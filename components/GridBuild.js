@@ -85,9 +85,9 @@ export default GridBuild = () => {
           value={currentRoom.height}
         />
         <label>x: </label>
-        <input type="number" onChange={(e) => setx(e.target.value)} value={x} />
+        <input type="number" name="x" onChange={changeValue} value={currentRoom.x} />
         <label>y: </label>
-        <input type="number" onChange={(e) => sety(e.target.value)} value={y} />
+        <input type="number" name="y" onChange={changeValue} value={currentRoom.y} />
       </div>
       <div
         style={gridMapStyle}
