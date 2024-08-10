@@ -22,7 +22,7 @@ export default GridBuild = () => {
   useEffect(() => {
     console.log("cr"+divGridData[currentRoomId.width])
   //setWidth(divGridData[currentRoomId].width)
-  setCurrentRoom(currentRoom.width=divGridData[currentRoomId].width);
+  setCurrentRoom(divGridData[currentRoomId]);
   setHeight(divGridData[currentRoomId].height)
   setx(divGridData[currentRoomId].x)
   sety(divGridData[currentRoomId].y)
