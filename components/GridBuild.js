@@ -24,7 +24,7 @@ export default GridBuild = () => {
   setHeight(divGridData[currentRoomId].height)
   setx(divGridData[currentRoomId].x)
   sety(divGridData[currentRoomId].y)
-  },[currentRoomId])
+  },[currentRoomId, width, height])
   const gridMapStyle = {
     display: "grid",
     gridTemplateColumns: "repeat(20, 1fr)",
@@ -39,11 +39,13 @@ export default GridBuild = () => {
     color: "slate",
     width: "5ch",
   };
-  /*const handleMouseDown = useCallback((roomId) => {
-    setCurrentRoomId(roomId)
-  }, [currentRoomId])*/
+  const changeValue = (e) => {
+    console.log("chv"+e.target.name);
+    if (e.target.name == "width") {
+      setWidth(e.target.value)
+    }
+  }
   const handleMouseDown = (event,roomId) => {
-    console.log("now"+event.clientX)
     if (roomId < 0) {
       //setCurrentRoomId(roomId)
       setInitialXPosition(event.clientX);
@@ -72,7 +74,7 @@ export default GridBuild = () => {
         <input
           type="number"
           name="width"
-          onChange={(e) => setWidth(e.target.value)}
+          onChange={changeValue}
           value={width}
         />
         <label>Height: </label>
