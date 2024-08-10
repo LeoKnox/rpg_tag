@@ -20,8 +20,7 @@ export default GridBuild = () => {
     setDivGridData(roomData(xOffset,yOffset))
   },[])
   useEffect(() => {
-    console.log("cr"+divGridData[currentRoomId.width])
-  //setWidth(divGridData[currentRoomId].width)
+    
   setCurrentRoom(divGridData[currentRoomId]);
   setHeight(divGridData[currentRoomId].height)
   setx(divGridData[currentRoomId].x)
@@ -42,9 +41,8 @@ export default GridBuild = () => {
     width: "5ch",
   };
   const changeValue = (e) => {
-    console.log("chv"+e.target.name+":"+e.target.value);
- const newRoom = currentRoom;
- setCurrentRoom({...currentRoom, width: e.target.value})
+    
+ setCurrentRoom({...currentRoom, [e.target.name]: e.target.value})
     
   }
   const handleMouseDown = (event,roomId) => {
@@ -82,8 +80,9 @@ export default GridBuild = () => {
         <label>Height: </label>
         <input
           type="number"
-          onChange={(e) => setHeight(e.target.value)}
-          value={height}
+          name="height"
+          onChange={changeValue}
+          value={currentRoom.height}
         />
         <label>x: </label>
         <input type="number" onChange={(e) => setx(e.target.value)} value={x} />
