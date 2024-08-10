@@ -43,7 +43,7 @@ export default GridBuild = () => {
     setCurrentRoomId(roomId)
   }, [currentRoomId])*/
   const handleMouseDown = (event,roomId) => {
-    console.log("now"+event.x)
+    console.log("now"+event.target.x)
     if (roomId < 0) {
       //setCurrentRoomId(roomId)
       setInitialXPosition(event.x);
@@ -88,7 +88,7 @@ export default GridBuild = () => {
       </div>
       <div
         style={gridMapStyle}
-        onMouseDown={handleMouseDown(-1)}
+        onMouseDown={(event) => handleMouseDown(event, -1)}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
       >
