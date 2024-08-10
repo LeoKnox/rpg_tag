@@ -7,10 +7,6 @@ export default GridBuild = () => {
   const [divGridData, setDivGridData] = useState(roomData(5, 10));
   const [currentRoomId, setCurrentRoomId] = useState(0);
   const [currentRoom, setCurrentRoom] = useState({});
-  const [width, setWidth] = useState(8);
-  const [height, setHeight] = useState(5);
-  const [x, setx] = useState(5);
-  const [y, sety] = useState(5);
   const [xOffset, setXOffset] = useState(0);
   const [yOffset, setYOffset] = useState(0);
   const [isMouseDown, setIsMouseDown] = useState(false);
@@ -22,9 +18,6 @@ export default GridBuild = () => {
   useEffect(() => {
     
   setCurrentRoom(divGridData[currentRoomId]);
-  setHeight(divGridData[currentRoomId].height)
-  setx(divGridData[currentRoomId].x)
-  sety(divGridData[currentRoomId].y)
   },[currentRoomId])
   const gridMapStyle = {
     display: "grid",
