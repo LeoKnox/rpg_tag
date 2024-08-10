@@ -34,9 +34,9 @@ export default GridBuild = () => {
     width: "5ch",
   };
   const changeValue = (e) => {
-    let newRoom = {...currentRoom, [e.target.name]: e.target.value}
+    let newRoom = {...currentRoom, [e.target.name]: parseInt(e.target.value)}
  setCurrentRoom(newRoom)
-setDivGridData({...divGridData, [currentRoomId]: newRoom})
+console.log({...divGridData, [currentRoomId]: newRoom})
     
   }
   const handleMouseDown = (event,roomId) => {
