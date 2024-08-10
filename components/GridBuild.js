@@ -24,7 +24,7 @@ export default GridBuild = () => {
   setHeight(divGridData[currentRoomId].height)
   setx(divGridData[currentRoomId].x)
   sety(divGridData[currentRoomId].y)
-  },[currentRoomId, width, height])
+  },[currentRoomId])
   const gridMapStyle = {
     display: "grid",
     gridTemplateColumns: "repeat(20, 1fr)",
@@ -40,10 +40,10 @@ export default GridBuild = () => {
     width: "5ch",
   };
   const changeValue = (e) => {
-    console.log("chv"+e.target.name);
-    if (e.target.name == "width") {
+    console.log("chv"+e.target.name+":"+e.target.value);
+
       setWidth(e.target.value)
-    }
+    
   }
   const handleMouseDown = (event,roomId) => {
     if (roomId < 0) {
