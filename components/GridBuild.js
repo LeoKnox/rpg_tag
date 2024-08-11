@@ -36,12 +36,14 @@ export default GridBuild = () => {
     width: "5ch",
   };
   const changeValue = (e) => {
+    console.log("D");
+    console.log(JSON.stringify(divGridData))
     let newRoom = {...currentRoom, [e.target.name]: parseInt(e.target.value)}
  setCurrentRoom(newRoom)
- console.log("D"+JSON.stringify(newRoom))
+ //console.log("D"+JSON.stringify(newRoom))
 
-console.log({...divGridData, [currentRoomId]: newRoom})
-    setDivGridData({...divGridData, [currentRoomId]: newRoom})
+//console.log({...divGridData, [currentRoomId]: newRoom})
+    //setDivGridData({...divGridData, [currentRoomId]: newRoom})
   }
   const handleMouseDown = (event,roomId) => {
     if (roomId < 0) {
