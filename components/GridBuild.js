@@ -41,9 +41,13 @@ export default GridBuild = () => {
  //console.log("D"+JSON.stringify(newRoom))
 setDivGridData(roomData(xOffset,yOffset))
 console.log({...divGridData, [currentRoomId]: newRoom})
-    //setDivGridData({...divGridData, [currentRoomId]: newRoom})
-
-    setDivGridData([{"id":0,"x":4,"y":6,"width":5,"height":5,"color":"darkgreen"},{"id":1,"x":5,"y":8,"width":16,"height":6}])
+    setDivGridData(divGridData.map(room =>
+      room.id === currentRoomId ? {...room, [e.target.name]: e.target.value}:room
+    ))
+/*setItems(prevItems => prevItems.map(item => 
+  item.id === id ? { ...item, name: newName } : item
+));*/
+    //setDivGridData([{"id":0,"x":4,"y":6,"width":5,"height":5,"color":"darkgreen"},{"id":1,"x":5,"y":8,"width":16,"height":6}])
   }
   const handleMouseDown = (event,roomId) => {
     if (roomId < 0) {
