@@ -41,7 +41,7 @@ export default GridBuild = () => {
     let newRoom = {...currentRoom, [e.target.name]: parseInt(e.target.value)}
  setCurrentRoom(newRoom)
  //console.log("D"+JSON.stringify(newRoom))
-
+setDivGridData(roomData(xOffset,yOffset))
 //console.log({...divGridData, [currentRoomId]: newRoom})
     //setDivGridData({...divGridData, [currentRoomId]: newRoom})
   }
