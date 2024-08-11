@@ -13,8 +13,8 @@ export default GridBuild = () => {
   const [initialXPosition, setInitialXPosition] = useState(0);
   const [initialYPosition, setInitialYPosition] = useState(0);
   useEffect(() => {
-    setDivGridData({...divGridData, [currentRoomId]: currentRoom})
-    //setDivGridData(roomData(xOffset,yOffset))
+    //setDivGridData({...divGridData, [currentRoomId]: currentRoom})
+    setDivGridData(roomData(xOffset,yOffset))
     console.log(JSON.stringify(divGridData));
   },[currentRoom])
   useEffect(() => {
@@ -38,6 +38,7 @@ export default GridBuild = () => {
   const changeValue = (e) => {
     let newRoom = {...currentRoom, [e.target.name]: parseInt(e.target.value)}
  setCurrentRoom(newRoom)
+ console.log("D"+JSON.stringify(newRoom))
 console.log({...divGridData, [currentRoomId]: newRoom})
     //setDivGridData({...divGridData, [currentRoomId]: newRoom})
   }
