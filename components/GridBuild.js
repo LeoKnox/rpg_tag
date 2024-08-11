@@ -39,7 +39,7 @@ export default GridBuild = () => {
     let newRoom = {...currentRoom, [e.target.name]: parseInt(e.target.value)}
  setCurrentRoom(newRoom)
 console.log({...divGridData, [currentRoomId]: newRoom})
-    
+    setDivGridData({...divGridData, [currentRoomId]: newRoom})
   }
   const handleMouseDown = (event,roomId) => {
     if (roomId < 0) {
