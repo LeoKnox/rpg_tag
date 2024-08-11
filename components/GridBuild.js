@@ -13,8 +13,9 @@ export default GridBuild = () => {
   const [initialXPosition, setInitialXPosition] = useState(0);
   const [initialYPosition, setInitialYPosition] = useState(0);
   useEffect(() => {
+    console.log("current room");
     setDivGridData(roomData(xOffset,yOffset))
-  },[])
+  },[currentRoom])
   useEffect(() => {
     
   setCurrentRoom(divGridData[currentRoomId]);
