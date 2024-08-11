@@ -14,7 +14,7 @@ export default GridBuild = () => {
   const [initialYPosition, setInitialYPosition] = useState(0);
   useEffect(() => {
     //setDivGridData({...divGridData, [currentRoomId]: currentRoom})
-    setDivGridData(roomData(xOffset,yOffset))
+    //setDivGridData(roomData(xOffset,yOffset))
     console.log(JSON.stringify(divGridData));
   },[currentRoom])
   useEffect(() => {
@@ -39,8 +39,9 @@ export default GridBuild = () => {
     let newRoom = {...currentRoom, [e.target.name]: parseInt(e.target.value)}
  setCurrentRoom(newRoom)
  console.log("D"+JSON.stringify(newRoom))
+
 console.log({...divGridData, [currentRoomId]: newRoom})
-    //setDivGridData({...divGridData, [currentRoomId]: newRoom})
+    setDivGridData({...divGridData, [currentRoomId]: newRoom})
   }
   const handleMouseDown = (event,roomId) => {
     if (roomId < 0) {
