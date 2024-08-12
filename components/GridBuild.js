@@ -42,18 +42,18 @@ export default GridBuild = () => {
   }
   const handleMouseDown = (event,roomId) => {
     console.log("room id"+event.target.id);
-    if (roomId < 0) {
+    //if (roomId < 0) {
       setInitialXPosition(event.clientX);
       setInitialYPosition(event.clientY);
       setIsMouseDown(true);
-    } else {
+    /*} else {
       console.log("heya" );
-    }
+    }*/
   };
   const handleMouseMove = (event) => {
     if (isMouseDown) {
       if (event.target.id) {
-      console.log("mouse move");
+      console.log(Math.floor((event.clientX - initialXPosition) / 10));
       } else {
       setXOffset(Math.floor((event.clientX - initialXPosition) / 10));
       setYOffset(Math.floor((event.clientY - initialYPosition) / 10));
