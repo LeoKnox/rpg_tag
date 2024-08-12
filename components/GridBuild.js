@@ -3,7 +3,6 @@ import { roomData } from "./divGridData.js";
 import DivGridMap from "./DivGridMap.js";
 
 export default GridBuild = () => {
-  console.log(roomData());
   const [divGridData, setDivGridData] = useState(roomData(5, 10));
   const [currentRoomId, setCurrentRoomId] = useState(0);
   const [currentRoom, setCurrentRoom] = useState({});
@@ -40,17 +39,16 @@ setDivGridData(roomData(xOffset,yOffset))
     setDivGridData(divGridData.map(room =>
       room.id === currentRoomId ? {...room, [e.target.name]: e.target.value}:room
     ))
+    console.log(xOffset+"D"+yOffset)
   }
   const handleMouseDown = (event,roomId) => {
     if (roomId < 0) {
-      //setCurrentRoomId(roomId)
       setInitialXPosition(event.clientX);
       setInitialYPosition(event.clientY);
       setIsMouseDown(true);
       
     } else {
       console.log("heya" );
-      //setCurrentRoomId(roomId)
     }
   };
   const handleMouseMove = (event) => {
@@ -65,7 +63,7 @@ setDivGridData(roomData(xOffset,yOffset))
   return (
     <div>
       <div style={gridBuildStyle}>
-        <p>{xOffset} id: {currentRoomId}</p>
+        <p>X:{xOffset} Y:{yOffset} id:{currentRoomId}</p>
         <label>Width: </label>
         <input
           type="number"
