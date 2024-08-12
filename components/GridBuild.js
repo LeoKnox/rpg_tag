@@ -53,8 +53,12 @@ setDivGridData(roomData(xOffset,yOffset))
   };
   const handleMouseMove = (event) => {
     if (isMouseDown) {
+      if (event.target.id) {
+      console.log("mouse move");
+      } else {
       setXOffset(Math.floor((event.clientX - initialXPosition) / 10));
       setYOffset(Math.floor((event.clientY - initialYPosition) / 10));
+      }
     }
   };
   const handleMouseUp = () => {
