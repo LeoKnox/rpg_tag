@@ -16,7 +16,12 @@ export default DivGridMap = ({
     //handleMouseDown(5);
   };
   return (
-    <div className="gridBuildRoom" style={roomStyle} onMouseDown={handleMouse}>
+    <div
+      className="gridBuildRoom"
+      style={roomStyle}
+      onMouseDown={handleMouse}
+      id={room.id}
+    >
       {room.id}
       <p>{roomStyle.gridArea}</p>
     </div>
