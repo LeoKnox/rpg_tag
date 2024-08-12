@@ -7,7 +7,7 @@ export default DivGridMap = ({
 }) => {
   const roomStyle = {
     border: `2px solid ${room.color || "darkblue"}`,
-    gridArea: `${room.y + yOffset}/${room.x + xOffset}/ span ${
+    gridArea: `${+room.y + +yOffset}/${+room.x + +xOffset}/ span ${
       room.height
     }/ span ${room.width}`,
   };
