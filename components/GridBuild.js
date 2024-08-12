@@ -39,7 +39,7 @@ setDivGridData(roomData(xOffset,yOffset))
     setDivGridData(divGridData.map(room =>
       room.id === currentRoomId ? {...room, [e.target.name]: e.target.value}:room
     ))
-    console.log(xOffset+"D"+yOffset)
+    console.log(e.target.name+":"+e.target.value)
   }
   const handleMouseDown = (event,roomId) => {
     if (roomId < 0) {
