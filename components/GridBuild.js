@@ -3,7 +3,7 @@ import { roomData } from "./divGridData.js";
 import DivGridMap from "./DivGridMap.js";
 
 export default GridBuild = () => {
-  const [divGridData, setDivGridData] = useState(roomData(5, 10));
+  const [divGridData, setDivGridData] = useState(roomData(0, 0));
   const [currentRoomId, setCurrentRoomId] = useState(0);
   const [currentRoom, setCurrentRoom] = useState({});
   const [xOffset, setXOffset] = useState(0);
