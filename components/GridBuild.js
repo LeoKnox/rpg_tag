@@ -42,11 +42,11 @@ setDivGridData(roomData(xOffset,yOffset))
     console.log(e.target.name+":"+e.target.value)
   }
   const handleMouseDown = (event,roomId) => {
+    console.log("room id"+event.target.id);
     if (roomId < 0) {
       setInitialXPosition(event.clientX);
       setInitialYPosition(event.clientY);
       setIsMouseDown(true);
-      
     } else {
       console.log("heya" );
     }
