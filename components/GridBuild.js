@@ -38,22 +38,20 @@ export default GridBuild = () => {
     setDivGridData(divGridData.map(room =>
       room.id === currentRoomId ? {...room, [e.target.name]: e.target.value}:room
     ))
-    console.log(e.target.name+":"+e.target.value)
   }
   const handleMouseDown = (event,roomId) => {
-    console.log("room id"+event.target.id);
-    //if (roomId < 0) {
       setInitialXPosition(event.clientX);
       setInitialYPosition(event.clientY);
       setIsMouseDown(true);
-    /*} else {
-      console.log("heya" );
-    }*/
   };
   const handleMouseMove = (event) => {
     if (isMouseDown) {
       if (event.target.id) {
-      console.log(Math.floor((event.clientX - initialXPosition) / 10));
+        let newRoom = {...currentRoom, [event.target.name]: parseInt(event.target.value)}
+        setCurrentRoom(newRoom)
+           setDivGridData(divGridData.map(room =>
+             room.id === currentRoomId ? {...room, x:Math.floor((event.clientX - initialXPosition) / 10)}:room
+           ))
       } else {
       setXOffset(Math.floor((event.clientX - initialXPosition) / 10));
       setYOffset(Math.floor((event.clientY - initialYPosition) / 10));
