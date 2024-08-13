@@ -50,9 +50,9 @@ export default GridBuild = () => {
         let newRoom = {...currentRoom, x: Math.floor(event.clientX/10), y: Math.floor(event.clientY/10)}
         setCurrentRoom(newRoom)
         console.log(newRoom);
-           /*setDivGridData(divGridData.map(room =>
+        setDivGridData(divGridData.map(room =>
              room.id === currentRoomId ? {...room, x:Math.floor((event.clientX - initialXPosition) / 10)}:room
-           ))*/
+           ))
       } else {
       setXOffset(Math.floor((event.clientX - initialXPosition) / 10));
       setYOffset(Math.floor((event.clientY - initialYPosition) / 10));
