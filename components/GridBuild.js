@@ -47,7 +47,7 @@ export default GridBuild = () => {
   const handleMouseMove = (event) => {
     if (isMouseDown) {
       if (event.target.id) {
-        let newRoom = {...currentRoom, x: parseInt(event.target.value)+xOffset}
+        let newRoom = {...currentRoom, x: event.clientX}
         setCurrentRoom(newRoom)
         console.log(newRoom);
            setDivGridData(divGridData.map(room =>
@@ -65,7 +65,7 @@ export default GridBuild = () => {
   return (
     <div>
       <div style={gridBuildStyle}>
-        <p>X:{xOffset} Y:{yOffset} id:{currentRoomId}</p>
+        <p>X:{currentRoom.x} Y:{currentRoom.y} id:{currentRoomId}</p>
         <label>Width: </label>
         <input
           type="number"
