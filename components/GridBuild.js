@@ -49,6 +49,7 @@ export default GridBuild = () => {
       if (event.target.id) {
         let newRoom = {...currentRoom, x: parseInt(event.target.value)+xOffset}
         setCurrentRoom(newRoom)
+        console.log(newRoom);
            setDivGridData(divGridData.map(room =>
              room.id === currentRoomId ? {...room, x:Math.floor((event.clientX - initialXPosition) / 10)}:room
            ))
