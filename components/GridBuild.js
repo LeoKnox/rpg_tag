@@ -51,9 +51,7 @@ export default GridBuild = () => {
         let newRoom = {...currentRoom, x: Math.floor(event.clientX/20), y: Math.floor(event.clientY/20)}
         setCurrentRoom(newRoom)
         console.log(newRoom);
-        setDivGridData(divGridData.map(room =>
-             room.id === currentRoomId ? {...room, x:Math.floor((parseInt(event.clientX) - parseInt(initialXPosition)) / 10), y:Math.floor((parseInt(event.clientY) - parseInt(initialYPosition)) / 10)}:room
-           ))
+        
            console.log(JSON.stringify(divGridData))
       } else {
       console.log("not target");
@@ -63,6 +61,9 @@ export default GridBuild = () => {
     }
   };
   const handleMouseUp = () => {
+  setDivGridData(divGridData.map(room =>
+             room.id === currentRoomId ? {...room, x:Math.floor((parseInt(event.clientX) - parseInt(initialXPosition)) / 10), y:Math.floor((parseInt(event.clientY) - parseInt(initialYPosition)) / 10)}:room
+           ))
     setIsMouseDown(false);
   };
   return (
