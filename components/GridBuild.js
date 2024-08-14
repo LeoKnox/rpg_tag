@@ -47,6 +47,7 @@ export default GridBuild = () => {
   const handleMouseMove = (event) => {
     if (isMouseDown) {
       if (event.target.id) {
+        console.log("targetid "+event.target.id);
         let newRoom = {...currentRoom, x: Math.floor(event.clientX/20), y: Math.floor(event.clientY/20)}
         setCurrentRoom(newRoom)
         console.log(newRoom);
@@ -54,6 +55,7 @@ export default GridBuild = () => {
              room.id === currentRoomId ? {...room, x:Math.floor((parseInt(event.clientX) - parseInt(initialXPosition)) / 10), y:Math.floor((parseInt(event.clientY) - parseInt(initialYPosition)) / 10)}:room
            ))
       } else {
+      console.log("not target");
       setXOffset(Math.floor((event.clientX - initialXPosition) / 10));
       setYOffset(Math.floor((event.clientY - initialYPosition) / 10));
       }
