@@ -52,7 +52,7 @@ export default GridBuild = () => {
         setCurrentRoom(newRoom)
         console.log(newRoom);
         setDivGridData(divGridData.map(room =>
-             room.id === 1 ?  newRoom:room
+             room.id === event.target.id ?  newRoom:room
            ))
            console.log(JSON.stringify(divGridData))
       } else {
