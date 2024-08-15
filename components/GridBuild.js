@@ -5,6 +5,7 @@ import DivGridMap from "./DivGridMap.js";
 export default GridBuild = () => {
   const [divGridData, setDivGridData] = useState(roomData(0, 0));
   const [currentRoomId, setCurrentRoomId] = useState(0);
+  const [isRoom, setIsRoom] = useState(false)
   const [currentRoom, setCurrentRoom] = useState({});
   const [xOffset, setXOffset] = useState(0);
   const [yOffset, setYOffset] = useState(0);
@@ -46,7 +47,8 @@ export default GridBuild = () => {
   };
   const handleMouseMove = (event) => {
     if (isMouseDown) {
-      if (event.target.id) {
+      if (event.target.id||isRoom) {
+      setIsRoom(true)
         console.log("targetid "+event.target.id +"+"+currentRoomId);
         let newRoom = {...currentRoom, x: Math.floor(event.clientX/20), y: Math.floor(event.clientY/20)}
         setCurrentRoom(newRoom)
@@ -54,7 +56,7 @@ export default GridBuild = () => {
         setDivGridData(divGridData.map(room =>
              room.id === currentRoomId ?  newRoom:room
            ))
-           console.log(JSON.stringify(divGridData))
+           console.log(newRoom)
       } else {
       console.log("not target");
       setXOffset(Math.floor((event.clientX - initialXPosition) / 10));
@@ -64,6 +66,7 @@ export default GridBuild = () => {
   };
   const handleMouseUp = () => {
     setIsMouseDown(false);
+    setIsRoom(false);
   };
   return (
     <div>
