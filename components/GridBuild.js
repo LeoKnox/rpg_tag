@@ -49,7 +49,7 @@ export default GridBuild = () => {
     if (isMouseDown) {
       if (event.target.id||isRoom) {
       setIsRoom(true)
-        let newRoom = {...currentRoom, x: Math.floor((event.clientX-initialXPosition)/20), y: Math.floor(event.clientY/20)}
+        let newRoom = {...currentRoom, x: (event.clientX-initialXPosition)%20, y: (event.clientY-initialYPosition)%20}
         setCurrentRoom(newRoom)
         setDivGridData(divGridData.map(room =>
              room.id === currentRoomId ?  newRoom:room
