@@ -49,14 +49,11 @@ export default GridBuild = () => {
     if (isMouseDown) {
       if (event.target.id||isRoom) {
       setIsRoom(true)
-        console.log("targetid "+event.target.id +"+"+currentRoomId);
-        let newRoom = {...currentRoom, x: Math.floor(event.clientX/20), y: Math.floor(event.clientY/20)}
+        let newRoom = {...currentRoom, x: Math.floor((event.clientX-initialXPosition)/20), y: Math.floor(event.clientY/20)}
         setCurrentRoom(newRoom)
-        console.log(newRoom);
         setDivGridData(divGridData.map(room =>
              room.id === currentRoomId ?  newRoom:room
            ))
-           console.log(newRoom)
       } else {
       console.log("not target");
       setXOffset(Math.floor((event.clientX - initialXPosition) / 10));
@@ -71,7 +68,7 @@ export default GridBuild = () => {
   return (
     <div>
       <div style={gridBuildStyle}>
-        <p>X:{currentRoom.x} Y:{currentRoom.y} id:{currentRoomId}</p>
+        <p>X:{xOffset} Y:{yOffset} id:{currentRoomId}</p>
         <label>Width: </label>
         <input
           type="number"
