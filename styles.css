@@ -5,4 +5,9 @@
 
 .column {
   display: grid;
+  overflow: hidden;
+}
+
+.gridBuildRoom {
+  z-index: auto;
 }
