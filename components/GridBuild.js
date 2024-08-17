@@ -29,6 +29,7 @@ export default GridBuild = () => {
     height: "600px",
     border: "1px solid lightblue",
   };
+
   const gridBuildStyle = {
     color: "slate",
     width: "5ch",
@@ -49,7 +50,7 @@ export default GridBuild = () => {
     if (isMouseDown) {
       if (event.target.id||isRoom) {
       setIsRoom(true)
-        let newRoom = {...currentRoom, x: (event.clientX-initialXPosition)%10, y: (event.clientY-initialYPosition)%10}
+        let newRoom = {...currentRoom, x: (event.clientX-initialXPosition)%10+parseInt(currentRoom.x), y: (event.clientY-initialYPosition)%10} + parseInt(currentRoom.y)
         console.log(event.clientX%10+"TT"+initialXPosition%10);
         setCurrentRoom(newRoom)
         setDivGridData(divGridData.map(room =>
@@ -68,6 +69,7 @@ export default GridBuild = () => {
   };
   return (
     <div>
+      <img src="test1.svg" />
       <div style={gridBuildStyle}>
         <p>X:{xOffset} Y:{yOffset} id:<input type="number" value={currentRoomId} onChange={(e) => setCurrentRoomId(e.target.value)}/></p>
         <label>Width: </label>
