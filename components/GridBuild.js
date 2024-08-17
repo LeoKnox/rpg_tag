@@ -55,8 +55,8 @@ export default GridBuild = () => {
         setIsRoom(true);
         let newRoom = {
           ...currentRoom,
-          x: parseInt(currentRoom.x) + ((event.clientX - initialXPosition)),
-          y: parseInt(currentRoom.y) + ((event.clientY - initialYPosition)),
+          x: parseInt(currentRoom.x) + (parseInt(event.clientX - initialXPosition)%100),
+          y: parseInt(currentRoom.y) + (parseInt(event.clientY - initialYPosition)%100),
         };
         console.log(newRoom);
         setCurrentRoom(newRoom);
