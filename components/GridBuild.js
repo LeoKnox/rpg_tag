@@ -5,7 +5,7 @@ import DivGridMap from "./DivGridMap.js";
 export default GridBuild = () => {
   const [divGridData, setDivGridData] = useState(roomData(0, 0));
   const [currentRoomId, setCurrentRoomId] = useState(0);
-  const [isRoom, setIsRoom] = useState(false)
+  const [isRoom, setIsRoom] = useState(false);
   const [currentRoom, setCurrentRoom] = useState({});
   const [xOffset, setXOffset] = useState(0);
   const [yOffset, setYOffset] = useState(0);
@@ -13,12 +13,11 @@ export default GridBuild = () => {
   const [initialXPosition, setInitialXPosition] = useState(0);
   const [initialYPosition, setInitialYPosition] = useState(0);
   useEffect(() => {
-    setDivGridData(roomData(xOffset,yOffset));
-  },[])
+    setDivGridData(roomData(xOffset, yOffset));
+  }, []);
   useEffect(() => {
-    
-  setCurrentRoom(divGridData[currentRoomId]);
-  },[currentRoomId])
+    setCurrentRoom(divGridData[currentRoomId]);
+  }, [currentRoomId]);
   const gridMapStyle = {
     display: "grid",
     gridTemplateColumns: "repeat(20, 1fr)",
@@ -35,31 +34,41 @@ export default GridBuild = () => {
     width: "5ch",
   };
   const changeValue = (e) => {
-    let newRoom = {...currentRoom, [e.target.name]: parseInt(e.target.value)}
- setCurrentRoom(newRoom)
-    setDivGridData(divGridData.map(room =>
-      room.id === currentRoomId ? {...room, [e.target.name]: e.target.value}:room
-    ))
-  }
-  const handleMouseDown = (event,roomId) => {
-      setInitialXPosition(event.clientX);
-      setInitialYPosition(event.clientY);
-      setIsMouseDown(true);
+    let newRoom = { ...currentRoom, [e.target.name]: parseInt(e.target.value) };
+    setCurrentRoom(newRoom);
+    setDivGridData(
+      divGridData.map((room) =>
+        room.id === currentRoomId
+          ? { ...room, [e.target.name]: e.target.value }
+          : room
+      )
+    );
+  };
+  const handleMouseDown = (event, roomId) => {
+    setInitialXPosition(event.clientX);
+    setInitialYPosition(event.clientY);
+    setIsMouseDown(true);
   };
   const handleMouseMove = (event) => {
     if (isMouseDown) {
-      if (event.target.id||isRoom) {
-      setIsRoom(true)
-        let newRoom = {...currentRoom, x: parseInt(currentRoom.x)+(event.clientX-initialXPosition)%1, y: parseInt(currentRoom.y)+(event.clientY-initialYPosition)%1}
-        console.log(event.clientX%10+"TT"+initialXPosition%10);
-        setCurrentRoom(newRoom)
-        setDivGridData(divGridData.map(room =>
-             room.id === currentRoomId ?  newRoom:room
-           ))
+      if (event.target.id || isRoom) {
+        setIsRoom(true);
+        let newRoom = {
+          ...currentRoom,
+          x: parseInt(currentRoom.x) + ((event.clientX - initialXPosition)),
+          y: parseInt(currentRoom.y) + ((event.clientY - initialYPosition)),
+        };
+        console.log(newRoom);
+        setCurrentRoom(newRoom);
+        setDivGridData(
+          divGridData.map((room) =>
+            room.id === currentRoomId ? newRoom : room
+          )
+        );
       } else {
-      console.log("not target");
-      setXOffset(Math.floor((event.clientX - initialXPosition) / 10));
-      setYOffset(Math.floor((event.clientY - initialYPosition) / 10));
+        console.log("not target");
+        setXOffset(Math.floor((event.clientX - initialXPosition) / 10));
+        setYOffset(Math.floor((event.clientY - initialYPosition) / 10));
       }
     }
   };
@@ -69,9 +78,15 @@ export default GridBuild = () => {
   };
   return (
     <div>
-      <img src="test1.svg" />
       <div style={gridBuildStyle}>
-        <p>X:{xOffset} Y:{yOffset} id:<input type="number" value={currentRoomId} onChange={(e) => setCurrentRoomId(e.target.value)}/></p>
+        <p>
+          X:{xOffset} Y:{yOffset} id:
+          <input
+            type="number"
+            value={currentRoomId}
+            onChange={(e) => setCurrentRoomId(e.target.value)}
+          />
+        </p>
         <label>Width: </label>
         <input
           type="number"
@@ -87,9 +102,19 @@ export default GridBuild = () => {
           value={currentRoom.height}
         />
         <label>x: </label>
-        <input type="number" name="x" onChange={changeValue} value={currentRoom.x} />
+        <input
+          type="number"
+          name="x"
+          onChange={changeValue}
+          value={currentRoom.x}
+        />
         <label>y: </label>
-        <input type="number" name="y" onChange={changeValue} value={currentRoom.y} />
+        <input
+          type="number"
+          name="y"
+          onChange={changeValue}
+          value={currentRoom.y}
+        />
       </div>
       <div
         style={gridMapStyle}
@@ -101,7 +126,7 @@ export default GridBuild = () => {
           <DivGridMap
             room={room}
             className="gridBuildRoom"
-            setCurrentRoomId = {setCurrentRoomId}
+            setCurrentRoomId={setCurrentRoomId}
             handleMouseDown={handleMouseDown}
             xOffset={xOffset}
             yOffset={yOffset}
