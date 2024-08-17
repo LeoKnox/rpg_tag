@@ -69,7 +69,7 @@ export default GridBuild = () => {
   return (
     <div>
       <div style={gridBuildStyle}>
-        <p>X:{xOffset} Y:{yOffset} id:<type type="number" value={currentRoomId} /></p>
+        <p>X:{xOffset} Y:{yOffset} id:<input type="number" value={currentRoomId} /></p>
         <label>Width: </label>
         <input
           type="number"
