@@ -58,7 +58,7 @@ export default GridBuild = () => {
           x: parseInt(currentRoom.x) + (parseInt(event.clientX - initialXPosition)%100),
           y: parseInt(currentRoom.y) + (parseInt(event.clientY - initialYPosition)%100),
         };
-        console.log(newRoom);
+        console.log(parseInt(event.clientX - initialXPosition)%100);
         setCurrentRoom(newRoom);
         setDivGridData(
           divGridData.map((room) =>
