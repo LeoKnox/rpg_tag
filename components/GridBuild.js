@@ -60,11 +60,11 @@ export default GridBuild = () => {
         };
         console.log(parseInt(event.clientX - initialXPosition)%100);
         setCurrentRoom(newRoom);
-        setDivGridData(
+       /* setDivGridData(
           divGridData.map((room) =>
             room.id === currentRoomId ? newRoom : room
           )
-        );
+        );*/
       } else {
         console.log("not target");
         setXOffset(Math.floor((event.clientX - initialXPosition) / 10));
