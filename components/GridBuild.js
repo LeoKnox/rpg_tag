@@ -84,6 +84,8 @@ export default GridBuild = () => {
           <input
             type="number"
             value={currentRoomId}
+            max="1"
+            min="0"
             onChange={(e) => setCurrentRoomId(e.target.value)}
           />
         </p>
