@@ -12,3 +12,9 @@
 .gridBuildRoom {
   z-index: 5;
 }
+
+.arrowButton {
+  background-color: lightblue;
+  border: 1px solid blue;
+  width: 1.4em;
+}
