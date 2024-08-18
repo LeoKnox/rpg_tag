@@ -55,8 +55,8 @@ export default GridBuild = () => {
         setIsRoom(true);
         let newRoom = {
           ...currentRoom,
-          x: (currentRoom.x) + ((event.clientX - initialXPosition)%100),
-          y: (currentRoom.y) + ((event.clientY - initialYPosition)%100),
+          x: (currentRoom.x) + ((event.clientX - initialXPosition)%1000),
+          y: (currentRoom.y) + ((event.clientY - initialYPosition)%1000),
         };
         console.log(parseInt(event.clientX - initialXPosition)%100);
         setCurrentRoom(newRoom);
@@ -79,7 +79,7 @@ export default GridBuild = () => {
     setIsRoom(false);
   };
   return (
-    <div>
+    <div onMouseUp={handleMouseUp}>
       <div style={gridBuildStyle}>
         <p>
           X:{xOffset} Y:{yOffset} id:
@@ -124,7 +124,7 @@ export default GridBuild = () => {
         style={gridMapStyle}
         onMouseDown={(event) => handleMouseDown(event, -1)}
         onMouseMove={handleMouseMove}
-        onMouseUp={handleMouseUp}
+        
       >
         {divGridData.map((room) => (
           <DivGridMap
