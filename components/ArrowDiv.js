@@ -1,16 +1,16 @@
-export default ArrowDiv = ({ currentRoom, setCurrentRoom }) => {
+export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
   return (
     <div style={{ display: "flex", color: "red" }}>
       <div
         onClick={() =>
-          setCurrentRoom({ ...currentRoom, width: currentRoom.width - 1 })
+          setCurrentRoom({ ...currentRoom, [param]: currentRoom.width - 1 })
         }
       >
         Left
       </div>
       <div
         onClick={() =>
-          setCurrentRoom({ ...currentRoom, width: currentRoom.width + 1 })
+          setCurrentRoom({ ...currentRoom, [param]: currentRoom.width + 1 })
         }
       >
         Right
