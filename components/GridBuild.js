@@ -112,13 +112,20 @@ export default GridBuild = () => {
             setCurrentRoom={setCurrentRoom}
           />
         </div>
-        <label>Height: </label>
-        <input
-          type="number"
-          name="height"
-          onChange={changeValue}
-          value={currentRoom.height}
-        />
+        <div style={{ display: "flex" }}>
+          <label>Height: </label>
+          <input
+            type="number"
+            name="height"
+            onChange={changeValue}
+            value={currentRoom.height}
+          />
+          <ArrowDiv
+            param="height"
+            currentRoom={currentRoom}
+            setCurrentRoom={setCurrentRoom}
+          />
+        </div>
         <label>x: </label>
         <input
           type="number"
