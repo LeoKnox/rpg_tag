@@ -5,7 +5,7 @@
 
 .column {
   display: grid;
-  overflow: hidden;
+  overflow: clip;
   height: 100%;
 }
 
