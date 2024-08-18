@@ -14,6 +14,13 @@ export default GridBuild = () => {
   const [initialXPosition, setInitialXPosition] = useState(0);
   const [initialYPosition, setInitialYPosition] = useState(0);
   useEffect(() => {
+    setDivGridData(
+      divGridData.map((room) =>
+        room.id === currentRoomId ? currentRoom : room
+      )
+    );
+  }, [currentRoom]);
+  useEffect(() => {
     setDivGridData(roomData(xOffset, yOffset));
   }, []);
   useEffect(() => {
@@ -56,11 +63,11 @@ export default GridBuild = () => {
         setIsRoom(true);
         let newRoom = {
           ...currentRoom,
-          x: (currentRoom.x) + ((event.clientX - initialXPosition)%1000),
-          y: (currentRoom.y) + ((event.clientY - initialYPosition)%1000),
+          x: currentRoom.x + ((event.clientX - initialXPosition) % 1000),
+          y: currentRoom.y + ((event.clientY - initialYPosition) % 1000),
         };
         setCurrentRoom(newRoom);
-       setDivGridData(
+        setDivGridData(
           divGridData.map((room) =>
             room.id === currentRoomId ? newRoom : room
           )
@@ -86,20 +93,20 @@ export default GridBuild = () => {
           <input
             type="number"
             value={currentRoomId}
-            max={divGridData.length-1}
+            max={divGridData.length - 1}
             min="0"
             onChange={(e) => setCurrentRoomId(e.target.value)}
           />
         </p>
-        <div style={{display:"flex"}}>
-        <label>Width: </label>
-        <input
-          type="number"
-          name="width"
-          onChange={changeValue}
-          value={currentRoom.width}
-        />
-        <ArrowDiv currentRoom={currentRoom} setCurrentRoom={setCurrentRoom} />
+        <div style={{ display: "flex" }}>
+          <label>Width: </label>
+          <input
+            type="number"
+            name="width"
+            onChange={changeValue}
+            value={currentRoom.width}
+          />
+          <ArrowDiv currentRoom={currentRoom} setCurrentRoom={setCurrentRoom} />
         </div>
         <label>Height: </label>
         <input
@@ -127,7 +134,6 @@ export default GridBuild = () => {
         style={gridMapStyle}
         onMouseDown={(event) => handleMouseDown(event, -1)}
         onMouseMove={handleMouseMove}
-        
       >
         {divGridData.map((room) => (
           <DivGridMap
