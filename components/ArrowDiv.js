@@ -1,6 +1,6 @@
 export default ArrowDiv = () => {
   return (
-    <div>
+    <div style={{display: "flex", color: "red"}}>
       <div>Left</div>
       <div>Right</div>
     </div>
