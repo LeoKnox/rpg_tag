@@ -126,21 +126,36 @@ export default GridBuild = () => {
             setCurrentRoom={setCurrentRoom}
           />
         </div>
-        <label>x: </label>
-        <input
-          type="number"
-          name="x"
-          onChange={changeValue}
-          value={currentRoom.x}
-        />
-        <label>y: </label>
-        <input
-          type="number"
-          name="y"
-          onChange={changeValue}
-          value={currentRoom.y}
-        />
+        <div style={{ display: "flex" }}>
+          <label>x: </label>
+          <input
+            type="number"
+            name="x"
+            onChange={changeValue}
+            value={currentRoom.x}
+          />
+          <ArrowDiv
+            param="x"
+            currentRoom={currentRoom}
+            setCurrentRoom={setCurrentRoom}
+          />
+        </div>
+        <div style={{ display: "flex" }}>
+          <label>y: </label>
+          <input
+            type="number"
+            name="y"
+            onChange={changeValue}
+            value={currentRoom.y}
+          />
+          <ArrowDiv
+            param="y"
+            currentRoom={currentRoom}
+            setCurrentRoom={setCurrentRoom}
+          />
+        </div>
       </div>
+
       <div
         style={gridMapStyle}
         onMouseDown={(event) => handleMouseDown(event, -1)}
