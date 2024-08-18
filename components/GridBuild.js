@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { roomData } from "./divGridData.js";
 import DivGridMap from "./DivGridMap.js";
+import ArrowDiv from "./ArrowDiv.js";
 
 export default GridBuild = () => {
   const [divGridData, setDivGridData] = useState(roomData(0, 0));
@@ -96,7 +97,7 @@ export default GridBuild = () => {
           name="width"
           onChange={changeValue}
           value={currentRoom.width}
-        />
+        /><ArrowDiv />
         <label>Height: </label>
         <input
           type="number"
