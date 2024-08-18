@@ -6,6 +6,7 @@
 .column {
   display: grid;
   overflow: hidden;
+  height: 100%;
 }
 
 .gridBuildRoom {
