@@ -44,7 +44,7 @@ export default GridBuild = () => {
       )
     );
   };
-  const handleMouseDown = (event, roomId) => {
+  const handleMouseDown = (event) => {
     setInitialXPosition(event.clientX);
     setInitialYPosition(event.clientY);
     setIsMouseDown(true);
@@ -58,7 +58,6 @@ export default GridBuild = () => {
           x: (currentRoom.x) + ((event.clientX - initialXPosition)%1000),
           y: (currentRoom.y) + ((event.clientY - initialYPosition)%1000),
         };
-        console.log(parseInt(event.clientX - initialXPosition)%100);
         setCurrentRoom(newRoom);
        setDivGridData(
           divGridData.map((room) =>
