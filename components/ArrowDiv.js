@@ -3,14 +3,14 @@ export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
     <div style={{ display: "flex", color: "red" }}>
       <div
         onClick={() =>
-          setCurrentRoom({ ...currentRoom, [param]: currentRoom.width - 1 })
+          setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] - 1 })
         }
       >
         Left
       </div>
       <div
         onClick={() =>
-          setCurrentRoom({ ...currentRoom, [param]: currentRoom.width + 1 })
+          setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] + 1 })
         }
       >
         Right
