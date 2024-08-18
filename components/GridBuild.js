@@ -91,13 +91,16 @@ export default GridBuild = () => {
             onChange={(e) => setCurrentRoomId(e.target.value)}
           />
         </p>
+        <div style={{display:"flex"}}>
         <label>Width: </label>
         <input
           type="number"
           name="width"
           onChange={changeValue}
           value={currentRoom.width}
-        /><ArrowDiv />
+        />
+        <ArrowDiv />
+        </div>
         <label>Height: </label>
         <input
           type="number"
