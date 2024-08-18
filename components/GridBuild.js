@@ -106,7 +106,11 @@ export default GridBuild = () => {
             onChange={changeValue}
             value={currentRoom.width}
           />
-          <ArrowDiv currentRoom={currentRoom} setCurrentRoom={setCurrentRoom} />
+          <ArrowDiv
+            param="width"
+            currentRoom={currentRoom}
+            setCurrentRoom={setCurrentRoom}
+          />
         </div>
         <label>Height: </label>
         <input
