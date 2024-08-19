@@ -22,6 +22,23 @@ export default AddRoom = ({ addRoom }) => {
           onChange={changeData}
         />
       </div>
+      <div style={{ display: "flex" }}>
+        <label>Height:</label>
+        <input
+          type="number"
+          name="height"
+          value={newRoom.height}
+          onChange={changeData}
+        />
+      </div>
+      <div style={{ display: "flex" }}>
+        <label>X:</label>
+        <input type="number" name="x" value={newRoom.x} onChange={changeData} />
+      </div>
+      <div style={{ display: "flex" }}>
+        <label>Y:</label>
+        <input type="number" name="y" value={newRoom.y} onChange={changeData} />
+      </div>
       <button onClick={() => addRoom(newRoom)}>Add</button>
     </>
   );
