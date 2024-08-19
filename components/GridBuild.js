@@ -50,6 +50,7 @@ export default GridBuild = () => {
       x: 1,
       y: 1,
     });
+    console.log(JSON.stringify(divGridData));
   };
   const changeValue = (e) => {
     let newRoom = { ...currentRoom, [e.target.name]: parseInt(e.target.value) };
