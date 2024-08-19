@@ -42,17 +42,8 @@ export default GridBuild = () => {
     color: "slate",
     width: "5ch",
   };
-  const addRoom = () => {
-    setDivGridData((room) => [
-      ...divGridData,
-      {
-        id: 2,
-        width: 1,
-        height: 1,
-        x: 1,
-        y: 1,
-      },
-    ]);
+  const addRoom = (newRoom) => {
+    setDivGridData((room) => [...divGridData, newRoom]);
     console.log(JSON.stringify(divGridData));
   };
   const changeValue = (e) => {
