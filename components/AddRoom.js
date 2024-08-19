@@ -11,7 +11,7 @@ export default AddRoom = ({ addRoom }) => {
     <div style={{ display: "flex" }}>
       <label>Width:</label>
       <input type="number" value={newRoom.width} />
-      <button onClick={addRoom}>Add</button>
+      <button onClick={() => addRoom(newRoom)}>Add</button>
     </div>
   );
 };
