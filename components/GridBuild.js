@@ -43,7 +43,13 @@ export default GridBuild = () => {
     width: "5ch",
   };
   const addRoom = () => {
-    console.log("add room");
+    setDivGridData(...divGridData, {
+      id: 2,
+      width: 1,
+      height: 1,
+      x: 1,
+      y: 1,
+    });
   };
   const changeValue = (e) => {
     let newRoom = { ...currentRoom, [e.target.name]: parseInt(e.target.value) };
@@ -92,7 +98,7 @@ export default GridBuild = () => {
   return (
     <div onMouseUp={handleMouseUp}>
       <div style={gridBuildStyle}>
-        <AddRoom />
+        <AddRoom addRoom={addRoom} />
         <p>
           X:{xOffset} Y:{yOffset} id:
           <input
