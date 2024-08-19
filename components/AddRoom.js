@@ -8,10 +8,16 @@ export default AddRoom = ({ addRoom }) => {
     y: 1,
   });
   return (
-    <div style={{ display: "flex" }}>
-      <label>Width:</label>
-      <input type="number" value={newRoom.width} />
+    <>
+      <div style={{ display: "flex" }}>
+        <label>Width:</label>
+        <input
+          type="number"
+          value={newRoom.width}
+          onChange={(e) => {...setNewRoom, width:(e.target.value)}}
+        />
+      </div>
       <button onClick={() => addRoom(newRoom)}>Add</button>
-    </div>
+    </>
   );
 };
