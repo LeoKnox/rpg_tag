@@ -104,21 +104,6 @@ export default GridBuild = () => {
             onChange={(e) => setCurrentRoomId(e.target.value)}
           />
         </p>
-
-        <div style={{ display: "flex" }}>
-          <label>y: </label>
-          <input
-            type="number"
-            name="y"
-            onChange={changeValue}
-            value={currentRoom.y}
-          />
-          <ArrowDiv
-            param="y"
-            currentRoom={currentRoom}
-            setCurrentRoom={setCurrentRoom}
-          />
-        </div>
       </div>
 
       <div
