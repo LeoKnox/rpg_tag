@@ -8,14 +8,19 @@ export default AddRoom = ({ addRoom }) => {
     y: 1,
   });
   const changeData = (e) => {
-    let temp = { ...newRoom, width: e.target.value };
+    let temp = { ...newRoom, [e.target.name]: e.target.value };
     setNewRoom(temp);
   };
   return (
     <>
       <div style={{ display: "flex" }}>
         <label>Width:</label>
-        <input type="number" value={newRoom.width} onChange={changeData} />
+        <input
+          type="number"
+          name="width"
+          value={newRoom.width}
+          onChange={changeData}
+        />
       </div>
       <button onClick={() => addRoom(newRoom)}>Add</button>
     </>
