@@ -1,3 +1,16 @@
+import { useState } from "react";
+
 export default AddRoom = () => {
-  return <p>Add Room</p>;
+  const [newRoom, setNewRoom] = useState({
+    width: 0,
+    height: 0,
+    x: 0,
+    y: 0,
+  });
+  return (
+    <div style={{ display: "flex" }}>
+      <label>Width:</label>
+      <input type="number" value={newRoom.width} />
+    </div>
+  );
 };
