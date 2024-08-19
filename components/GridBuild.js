@@ -43,13 +43,16 @@ export default GridBuild = () => {
     width: "5ch",
   };
   const addRoom = () => {
-    setDivGridData(...divGridData, {
-      id: 2,
-      width: 1,
-      height: 1,
-      x: 1,
-      y: 1,
-    });
+    setDivGridData((room) => [
+      ...divGridData,
+      {
+        id: 2,
+        width: 1,
+        height: 1,
+        x: 1,
+        y: 1,
+      },
+    ]);
     console.log(JSON.stringify(divGridData));
   };
   const changeValue = (e) => {
