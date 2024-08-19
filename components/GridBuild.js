@@ -41,6 +41,9 @@ export default GridBuild = () => {
     color: "slate",
     width: "5ch",
   };
+  const addRoom = () => {
+    console.log("add room");
+  };
   const changeValue = (e) => {
     let newRoom = { ...currentRoom, [e.target.name]: parseInt(e.target.value) };
     setCurrentRoom(newRoom);
@@ -88,6 +91,7 @@ export default GridBuild = () => {
   return (
     <div onMouseUp={handleMouseUp}>
       <div style={gridBuildStyle}>
+        <button onClick={addRoom}>Add Room</button>
         <p>
           X:{xOffset} Y:{yOffset} id:
           <input
