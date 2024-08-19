@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { roomData } from "./divGridData.js";
 import DivGridMap from "./DivGridMap.js";
-import ArrowDiv from "./ArrowDiv.js";
 import AddRoom from "./AddRoom.js";
 
 export default GridBuild = () => {
@@ -45,17 +44,6 @@ export default GridBuild = () => {
   const addRoom = (newRoom) => {
     newRoom.id = divGridData.length;
     setDivGridData((room) => [...divGridData, newRoom]);
-  };
-  const changeValue = (e) => {
-    let newRoom = { ...currentRoom, [e.target.name]: parseInt(e.target.value) };
-    setCurrentRoom(newRoom);
-    setDivGridData(
-      divGridData.map((room) =>
-        room.id === currentRoomId
-          ? { ...room, [e.target.name]: e.target.value }
-          : room
-      )
-    );
   };
   const handleMouseDown = (event) => {
     setInitialXPosition(event.clientX);
