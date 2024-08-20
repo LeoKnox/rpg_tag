@@ -2,11 +2,13 @@ import { useState, useEffect, useCallback } from "react";
 import { roomData } from "./divGridData.js";
 import DivGridMap from "./DivGridMap.js";
 import AddRoom from "./AddRoom.js";
+import EditRoom from "./EditRoom.js";
 
 export default GridBuild = () => {
   const [divGridData, setDivGridData] = useState(roomData(0, 0));
   const [currentRoomId, setCurrentRoomId] = useState(0);
   const [isRoom, setIsRoom] = useState(false);
+  const [editAdd, setEditAdd] = useState(true);
   const [currentRoom, setCurrentRoom] = useState({});
   const [xOffset, setXOffset] = useState(0);
   const [yOffset, setYOffset] = useState(0);
@@ -43,7 +45,7 @@ export default GridBuild = () => {
   };
   const addRoom = (newRoom) => {
     newRoom.id = divGridData.length;
-    setDivGridData((room) => [...divGridData, newRoom]);
+    setDivGridData([...divGridData, newRoom]);
   };
   const handleMouseDown = (event) => {
     setInitialXPosition(event.clientX);
@@ -81,6 +83,10 @@ export default GridBuild = () => {
   return (
     <div onMouseUp={handleMouseUp}>
       <div style={gridBuildStyle}>
+        <button onClick={() => setEditAdd(!editAdd)}>
+          {editAdd ? "Edit" : "Add"}
+        </button>
+        <EditRoom />
         <AddRoom addRoom={addRoom} />
         <p>
           X:{xOffset} Y:{yOffset} id:
