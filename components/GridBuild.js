@@ -27,6 +27,7 @@ export default GridBuild = () => {
   }, []);
   useEffect(() => {
     setCurrentRoom(divGridData[currentRoomId]);
+    setEditAdd(true);
   }, [currentRoomId]);
   const gridMapStyle = {
     display: "grid",
@@ -81,8 +82,8 @@ export default GridBuild = () => {
     setIsRoom(false);
   };
   const changeCurrentRoom = () => {
-   setCurrentRoomId(1)
-   }
+    setCurrentRoomId(1);
+  };
   return (
     <div onMouseUp={handleMouseUp}>
       <div style={gridBuildStyle}>
@@ -92,7 +93,11 @@ export default GridBuild = () => {
         {editAdd ? (
           <AddRoom addRoom={addRoom} />
         ) : (
-          <EditRoom changeCurrentRoom={changeCurrentRoom} currentRoom={currentRoom} setCurrentRoom={setCurrentRoom} />
+          <EditRoom
+            changeCurrentRoom={changeCurrentRoom}
+            currentRoom={currentRoom}
+            setCurrentRoom={setCurrentRoom}
+          />
         )}
         <p>
           X:{xOffset} Y:{yOffset} id:
