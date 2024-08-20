@@ -89,7 +89,7 @@ export default GridBuild = () => {
         {editAdd ? (
           <AddRoom addRoom={addRoom} />
         ) : (
-          <EditRoom currentRoom={currentRoom} />
+          <EditRoom currentRoom={currentRoom} setCurrentRoom={setCurrentRoom} />
         )}
         <p>
           X:{xOffset} Y:{yOffset} id:
