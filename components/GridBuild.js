@@ -86,7 +86,11 @@ export default GridBuild = () => {
         <button onClick={() => setEditAdd(!editAdd)}>
           {editAdd ? "Edit" : "Add"}
         </button>
-        {editAdd ? <AddRoom addRoom={addRoom} /> : <EditRoom />}
+        {editAdd ? (
+          <AddRoom addRoom={addRoom} />
+        ) : (
+          <EditRoom currentRoom={currentRoom} />
+        )}
         <p>
           X:{xOffset} Y:{yOffset} id:
           <input
