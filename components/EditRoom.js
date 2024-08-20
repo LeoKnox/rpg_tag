@@ -13,6 +13,11 @@ export default EditRoom = ({ currentRoom, setCurrentRoom }) => {
           value={currentRoom.width}
           onChange={changeData}
         />
+        <ArrowDiv
+          param="width"
+          currentRoom={currentRoom}
+          setCurrentRoom={setCurrentRoom}
+        />
       </div>
       <div style={{ display: "flex" }}>
         <label>Height:</label>
