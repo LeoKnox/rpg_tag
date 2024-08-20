@@ -1,6 +1,7 @@
-export default EditRoom = ({ currentRoom }) => {
+export default EditRoom = ({ currentRoom, setCurrentRoom }) => {
   const changeData = () => {
-    console.log("dc");
+    let temp = { ...currentRoom, width: currentRoom.wdith + 1 };
+    setCurrentRoom(temp);
   };
   return (
     <>
