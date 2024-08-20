@@ -27,6 +27,11 @@ export default EditRoom = ({ currentRoom, setCurrentRoom }) => {
           value={currentRoom.height}
           onChange={changeData}
         />
+        <ArrowDiv
+          param="height"
+          currentRoom={currentRoom}
+          setCurrentRoom={setCurrentRoom}
+        />
       </div>
       <div style={{ display: "flex" }}>
         <label>X:</label>
@@ -35,6 +40,11 @@ export default EditRoom = ({ currentRoom, setCurrentRoom }) => {
           name="x"
           value={currentRoom.x}
           onChange={changeData}
+        />
+        <ArrowDiv
+          param="x"
+          currentRoom={currentRoom}
+          setCurrentRoom={setCurrentRoom}
         />
       </div>
       <div style={{ display: "flex" }}>
@@ -45,7 +55,11 @@ export default EditRoom = ({ currentRoom, setCurrentRoom }) => {
           value={currentRoom.y}
           onChange={changeData}
         />
-        <ArrowDiv param="y" currentRoom={currentRoom} />
+        <ArrowDiv
+          param="y"
+          currentRoom={currentRoom}
+          setCurrentRoom={setCurrentRoom}
+        />
       </div>
       <button onClick={() => addRoom(newRoom)}>Edit</button>
     </>
