@@ -3,7 +3,7 @@ export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
     <div style={{ display: "flex", color: "red" }}>
       <div
         className="arrowButton"
-        onClick={() =>
+        onMousedown={() =>
           setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] - 1 })
         }
       >
