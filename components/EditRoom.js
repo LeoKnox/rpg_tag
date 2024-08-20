@@ -1,4 +1,4 @@
-export default EditRoom = (currentRoom) => {
+export default EditRoom = ({ currentRoom }) => {
   const changeData = () => {
     console.log("dc");
   };
