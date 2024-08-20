@@ -27,7 +27,7 @@ export default GridBuild = () => {
   }, []);
   useEffect(() => {
     setCurrentRoom(divGridData[currentRoomId]);
-    setEditAdd(true);
+    setEditAdd(false);
   }, [currentRoomId]);
   const gridMapStyle = {
     display: "grid",
