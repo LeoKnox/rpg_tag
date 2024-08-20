@@ -88,7 +88,7 @@ export default GridBuild = () => {
     <div onMouseUp={handleMouseUp}>
       <div style={gridBuildStyle}>
         <button onClick={() => setEditAdd(!editAdd)}>
-          {editAdd ? "Edit" : "Add"}
+          {editAdd ? "Edit" : "Add"}:{editAdd | currentRoomId}
         </button>
         {editAdd ? (
           <AddRoom addRoom={addRoom} />
