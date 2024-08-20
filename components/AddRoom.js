@@ -22,6 +22,11 @@ export default AddRoom = ({ addRoom }) => {
           value={newRoom.width}
           onChange={changeData}
         />
+        <ArrowDiv
+          param="width"
+          currentRoom={newRoom}
+          setCurrentRoom={setNewRoom}
+        />
       </div>
       <div style={{ display: "flex" }}>
         <label>Height:</label>
@@ -31,10 +36,16 @@ export default AddRoom = ({ addRoom }) => {
           value={newRoom.height}
           onChange={changeData}
         />
+        <ArrowDiv
+          param="height"
+          currentRoom={newRoom}
+          setCurrentRoom={setNewRoom}
+        />
       </div>
       <div style={{ display: "flex" }}>
         <label>X:</label>
         <input type="number" name="x" value={newRoom.x} onChange={changeData} />
+        <ArrowDiv param="x" currentRoom={newRoom} setCurrentRoom={setNewRoom} />
       </div>
       <div style={{ display: "flex" }}>
         <label>Y:</label>
