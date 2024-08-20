@@ -1,12 +1,10 @@
 export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
+  const updateValue = () => {
+    setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] - 1 });
+  };
   return (
     <div style={{ display: "flex", color: "red" }}>
-      <div
-        className="arrowButton"
-        onMouseDown={() =>
-          setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] - 1 })
-        }
-      >
+      <div className="arrowButton" onMouseDown={updateValue}>
         ↓
       </div>
       <div
