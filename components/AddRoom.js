@@ -5,7 +5,7 @@ export default AddRoom = ({ addRoom }) => {
   const [newRoom, setNewRoom] = useState({
     width: 5,
     height: 5,
-    x: 0,
+    x: 1,
     y: 1,
   });
   const changeData = (e) => {
