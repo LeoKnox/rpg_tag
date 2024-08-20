@@ -80,6 +80,9 @@ export default GridBuild = () => {
     setIsMouseDown(false);
     setIsRoom(false);
   };
+  const changeCurrentRoom = () => {
+   setCurrentRoomId(1)
+   }
   return (
     <div onMouseUp={handleMouseUp}>
       <div style={gridBuildStyle}>
@@ -89,7 +92,7 @@ export default GridBuild = () => {
         {editAdd ? (
           <AddRoom addRoom={addRoom} />
         ) : (
-          <EditRoom currentRoom={currentRoom} setCurrentRoom={setCurrentRoom} />
+          <EditRoom changeCurrentRoom={changeCurrentRoom} currentRoom={currentRoom} setCurrentRoom={setCurrentRoom} />
         )}
         <p>
           X:{xOffset} Y:{yOffset} id:
