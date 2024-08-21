@@ -2,14 +2,18 @@ import { useState } from "react";
 
 export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
   const [timerActive, setTimerActive] = useState(false);
+  let timerId = setInterval(() => {
+    3000;
+  }, 1000);
   const updateValue = (e) => {
-    setTimerActive(true);
-    if (e.target.id == "decrease") {
-      setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] - 1 });
-    }
-    if (e.target.id == "increase") {
-      setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] + 1 });
-    }
+    setInterval(() => {
+      if (e.target.id == "decrease") {
+        setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] - 1 });
+      }
+      if (e.target.id == "increase") {
+        setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] + 1 });
+      }
+    }, 1000);
   };
   const stopTimer = () => {
     setTimerActive(false);
