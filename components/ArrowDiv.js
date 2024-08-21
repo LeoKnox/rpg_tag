@@ -1,8 +1,10 @@
 export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
   const updateValue = (e) => {
-    console.log(e.target.name);
     if (e.target.id == "decrease") {
       setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] - 1 });
+    }
+    if (e.target.id == "increase") {
+      setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] + 1 });
     }
   };
   return (
@@ -15,10 +17,9 @@ export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
         ↓
       </div>
       <div
+        id="increase"
         className="arrowButton"
-        onClick={() =>
-          setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] + 1 })
-        }
+        onMouseDown={(e) => updateValue(e)}
       >
         ↑
       </div>
