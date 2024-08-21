@@ -1,12 +1,17 @@
 export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
   const updateValue = (e) => {
+    console.log(e.target.name);
     if (e.target.name == "decrease") {
       setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] - 1 });
     }
   };
   return (
-    <div style={{ display: "flex", color: "red" }}>
-      <div name="decrease" className="arrowButton" onMouseDown={updateValue}>
+    <div style={{ display: "flex", color: "darkblue" }}>
+      <div
+        name="decrease"
+        className="arrowButton"
+        onMouseDown={(e) => updateValue(e)}
+      >
         ↓
       </div>
       <div
