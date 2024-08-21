@@ -7,11 +7,12 @@ export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
   }, 1000);
   const updateValue = (e) => {
     setTimerActive("true");
+    let temp = e.target.id;
     setInterval(() => {
       if (e.target.id == "decrease") {
         setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] - 1 });
       }
-      if (e.target.id == "increase") {
+      if (temp == "increase") {
         setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] + 1 });
       }
       console.log("red");
