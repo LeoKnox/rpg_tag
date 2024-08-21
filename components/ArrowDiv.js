@@ -1,5 +1,9 @@
+import { useState } from "react";
+
 export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
+  const [timerActive, setTimerActive] = useState(false);
   const updateValue = (e) => {
+    setTimerActive(true);
     if (e.target.id == "decrease") {
       setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] - 1 });
     }
@@ -8,7 +12,8 @@ export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
     }
   };
   const stopTimer = () => {
-    console.log("stop");
+    setTimerActive(false);
+    console.log("stop" + timerActive);
   };
   return (
     <div style={{ display: "flex", color: "darkblue" }}>
