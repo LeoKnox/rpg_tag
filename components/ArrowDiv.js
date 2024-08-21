@@ -7,12 +7,16 @@ export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
       setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] + 1 });
     }
   };
+  const stopTimer = () => {
+    console.log("stop");
+  };
   return (
     <div style={{ display: "flex", color: "darkblue" }}>
       <div
         id="decrease"
         className="arrowButton"
         onMouseDown={(e) => updateValue(e)}
+        onMouseUp={stopTimer}
       >
         ↓
       </div>
@@ -20,6 +24,7 @@ export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
         id="increase"
         className="arrowButton"
         onMouseDown={(e) => updateValue(e)}
+        onMouseUp={stopTimer}
       >
         ↑
       </div>
