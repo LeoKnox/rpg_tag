@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
   const [timerActive, setTimerActive] = useState(false);
-  const intervalValue = (e) => {
-    setInterval(updateValue(e), 1000);
-  };
+  useEffect(() => {
+    const intervalValue = setInterval(updateValue(), 1000);
+  })
   const updateValue = (e) => {
     if (e.target.id == "decrease") {
       setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] - 1 });
