@@ -3,7 +3,7 @@ import { useState } from "react";
 export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
   const [timerActive, setTimerActive] = useState(false);
   const intervalValue = (e) => {
-    repeat = setInterval(updateValue(e), 1000);
+    setInterval(updateValue(e), 1000);
   };
   const updateValue = (e) => {
     if (e.target.id == "decrease") {
