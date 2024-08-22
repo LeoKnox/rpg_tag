@@ -2,10 +2,7 @@ import { useState, useEffect } from "react";
 
 export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
   const [timerActive, setTimerActive] = useState(false);
-  useEffect((e) => {
-    console.log("time" + e.target.value);
-    const intervalValue = setInterval(updateValue(e), 1000);
-  });
+
   const updateValue = (e) => {
     if (e.target.id == "decrease") {
       setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] - 1 });
@@ -15,6 +12,10 @@ export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
     }
     console.log("red");
   };
+  useEffect(() => {
+    console.log("time");
+    setInterval(updateValue(), 1000);
+  }, updateValue);
   const stopTimer = () => {
     setInterval(() => {}, 0);
     setTimerActive(false);
@@ -33,7 +34,7 @@ export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
       <div
         id="increase"
         className="arrowButton"
-        onMouseDown={(e) => intervalValue(e)}
+        onMouseDown={(e) => updateValue(e)}
         onMouseUp={stopTimer}
       >
         ↑
