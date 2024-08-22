@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
   const [timerActive, setTimerActive] = useState(false);
   useEffect((e) => {
+    console.log("time" + e.target.value);
     const intervalValue = setInterval(updateValue(e), 1000);
   });
   const updateValue = (e) => {
