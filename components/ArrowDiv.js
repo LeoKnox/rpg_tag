@@ -4,6 +4,7 @@ export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
   const [timerActive, setTimerActive] = useState(false);
 
   const start = (e) => {
+    setTimerActive(true);
     let i = 0;
     while (timerActive && i < 10) {
       console.log(e.target.id);
