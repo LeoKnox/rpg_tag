@@ -4,15 +4,13 @@ export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
   const [timerActive, setTimerActive] = useState(false);
 
   const start = (e) => {
-    repeat(() => {
-      let i = 0;
-      while (timerActive && i < 10) {
-        console.log(e.target.id);
-        updateValue(e.target.id);
-        setTimerActive(true);
-        i++;
-      }
-    });
+    let i = 0;
+    while (timerActive && i < 10) {
+      console.log(e.target.id);
+      updateValue(e.target.id);
+      setTimerActive(true);
+      i++;
+    }
     const updateValue = (temp) => {
       console.log("red");
       if (temp == "decrease") {
