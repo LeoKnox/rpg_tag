@@ -4,7 +4,7 @@ export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
   const [timerActive, setTimerActive] = useState(false);
 
   const updateValue = (e) => {
-    setTimeout(() => {
+    setInterval(() => {
       if (e.target.id == "decrease") {
         setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] - 1 });
       }
