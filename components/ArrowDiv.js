@@ -3,13 +3,20 @@ import { useState, useEffect } from "react";
 export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
   const [timerActive, setTimerActive] = useState(false);
 
+  const start = () => {
+    setTimerActive = true;
+  };
   const updateValue = (e) => {
     repeat(() => {
-      if (e.target.id == "decrease") {
-        setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] - 1 });
-      }
-      if (e.target.id == "increase") {
-        setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] + 1 });
+      let i = 0;
+      while (timerActive & (i < 10)) {
+        if (e.target.id == "decrease") {
+          setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] - 1 });
+        }
+        if (e.target.id == "increase") {
+          setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] + 1 });
+        }
+        i++;
       }
     });
     console.log("red");
@@ -28,6 +35,7 @@ export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
       <div
         id="decrease"
         className="arrowButton"
+        onClick={start}
         onMouseDown={(e) => updateValue(e)}
         onMouseUp={stopTimer}
       >
