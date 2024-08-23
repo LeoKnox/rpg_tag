@@ -4,16 +4,20 @@ export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
   const [timerActive, setTimerActive] = useState(false);
 
   const updateValue = (e) => {
-    setInterval(() => {
+    repeat(() => {
       if (e.target.id == "decrease") {
         setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] - 1 });
       }
       if (e.target.id == "increase") {
         setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] + 1 });
       }
-    }, 2000);
+    });
     console.log("red");
   };
+  function repeat(param) {
+    timer = setInterval(param, 1000);
+    param();
+  }
   const stopTimer = () => {
     setInterval(() => {}, 0);
     setTimerActive(false);
