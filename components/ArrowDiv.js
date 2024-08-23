@@ -4,18 +4,16 @@ export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
   const [timerActive, setTimerActive] = useState(false);
 
   const updateValue = (e) => {
-    if (e.target.id == "decrease") {
-      setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] - 1 });
-    }
-    if (e.target.id == "increase") {
-      setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] + 1 });
-    }
+    setTimeout(() => {
+      if (e.target.id == "decrease") {
+        setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] - 1 });
+      }
+      if (e.target.id == "increase") {
+        setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] + 1 });
+      }
+    }, 2000);
     console.log("red");
   };
-  useEffect(() => {
-    console.log("time");
-    setInterval(updateValue(), 1000);
-  }, updateValue);
   const stopTimer = () => {
     setInterval(() => {}, 0);
     setTimerActive(false);
