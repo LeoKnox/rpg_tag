@@ -13,7 +13,7 @@ export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
     }
   };
   const updateValue = (temp) => {
-    console.log("red");
+    console.log("red " + temp);
     if (temp == "decrease") {
       setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] - 1 });
     }
