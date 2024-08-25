@@ -5,19 +5,20 @@ export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
 
   const start = (e) => {
     setTimerActive(true);
-    () => updateValue(e.target.id);
+    let i = 0;
+    while (timerActive && i < 10) {
+      updateValue(e.target.id);
+      i++;
+    }
   };
   const updateValue = (temp) => {
     console.log("red " + temp);
-    let i = 0;
-    while (timerActive && i < 10) {
-      if (temp == "decrease") {
-        setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] - 1 });
-      }
-      if (temp == "increase") {
-        setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] + 1 });
-      }
-      i++;
+
+    if (temp == "decrease") {
+      setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] - 1 });
+    }
+    if (temp == "increase") {
+      setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] + 1 });
     }
   };
   function repeat(param) {
@@ -25,7 +26,7 @@ export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
     param();
   }
   const stopTimer = () => {
-    setInterval(() => {}, 0);
+    //setInterval(() => {}, 0);
     setTimerActive(false);
     console.log("stop" + timerActive);
   };
@@ -43,7 +44,6 @@ export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
       <div
         id="increase"
         className="arrowButton"
-        onClick={() => setTimerActive(!timerActive)}
         onMouseDown={(e) => start(e)}
         onMouseUp={stopTimer}
       >
