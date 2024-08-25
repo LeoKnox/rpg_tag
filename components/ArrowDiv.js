@@ -6,7 +6,7 @@ export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
   const start = (e) => {
     setTimerActive(true);
     let i = 0;
-    while (timerActive && i < 10) {
+    while (i < 10) {
       updateValue(e.target.id);
       i++;
     }
