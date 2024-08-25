@@ -6,10 +6,13 @@ export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
   const start = (e) => {
     let i = 0;
     while (timerActive && i < 10) {
+      //setOutput(prevOutput => prevOutput + data[i] + '\n');
+      setCurrentRoom({ ...currentRoom, ["width"]: currentRoom.width + 1 });
+      /*
       console.log(e.target.id);
       updateValue(e.target.id);
       setTimerActive(true);
-      i++;
+      i++;*/
     }
   };
   const updateValue = (temp) => {
@@ -20,7 +23,6 @@ export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
     if (temp == "increase") {
       setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] + 1 });
     }
-    setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] + 1 });
   };
   function repeat(param) {
     timer = setInterval(param, 1000);
