@@ -7,12 +7,13 @@ export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
     let i = 0;
     while (timerActive && i < 10) {
       //setOutput(prevOutput => prevOutput + data[i] + '\n');
-      setCurrentRoom({ ...currentRoom, ["width"]: currentRoom.width + 1 });
+      setCurrentRoom({ ...currentRoom, [param]: currentRoom.width + 1 });
+      setTimerActive(true);
+      i++;
       /*
       console.log(e.target.id);
       updateValue(e.target.id);
-      setTimerActive(true);
-      i++;*/
+      */
     }
   };
   const updateValue = (temp) => {
