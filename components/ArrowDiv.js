@@ -6,8 +6,9 @@ export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
   const start = (e) => {
     setTimerActive(true);
     let i = 0;
+    let temp = e.target.id;
     while (i < 10) {
-      updateValue(e.target.id);
+      updateValue(temp);
       i++;
     }
   };
@@ -16,9 +17,11 @@ export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
 
     if (temp == "decrease") {
       setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] - 1 });
+      console.log("dec");
     }
     if (temp == "increase") {
       setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] + 1 });
+      console.log("inc");
     }
   };
   function repeat(param) {
