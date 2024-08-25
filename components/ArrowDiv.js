@@ -2,15 +2,19 @@ import { useState, useEffect } from "react";
 
 export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
   const [timerActive, setTimerActive] = useState(false);
+  var holdLoop;
 
   const start = (e) => {
-    setTimerActive(true);
+    holdLoop = setInterval(() => {
+      setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] - 1 });
+    });
+    /*setTimerActive(true);
     let i = 0;
     let temp = e.target.id;
     while (i < 10) {
       updateValue(temp);
       i++;
-    }
+    }*/
   };
   const updateValue = (temp) => {
     console.log("red " + temp);
@@ -30,6 +34,7 @@ export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
   }
   const stopTimer = () => {
     //setInterval(() => {}, 0);
+    clearInterval(holdLoop);
     setTimerActive(false);
     console.log("stop" + timerActive);
   };
