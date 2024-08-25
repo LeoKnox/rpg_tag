@@ -18,11 +18,9 @@ export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
       setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] - 1 });
     }
     if (temp == "increase") {
-      setCurrentRoom({
-        ...currentRoom,
-        ["increase"]: currentRoom["increase"] + 1,
-      });
+      setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] + 1 });
     }
+    setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] + 1 });
   };
   function repeat(param) {
     timer = setInterval(param, 1000);
