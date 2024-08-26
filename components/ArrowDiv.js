@@ -24,8 +24,7 @@ export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
     if (temp == "decrease") {
       setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] - 1 });
       console.log("dec");
-    }
-    if (temp == "increase") {
+    } else if (temp == "increase") {
       setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] + 1 });
       console.log("inc");
     }
