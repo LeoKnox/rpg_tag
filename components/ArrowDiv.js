@@ -5,11 +5,11 @@ export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
   var holdLoop;
 
   const start = (e) => {
-    setInterval(
+    /*setInterval(
       setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] - 1 }),
       1000
-    );
-    //holdLoop = setInterval(updateValue(e.target.id), 1000);
+    );*/
+    setInterval(() => updateValue(e.target.id), 1000);
     /*setTimerActive(true);
     let i = 0;
     let temp = e.target.id;
