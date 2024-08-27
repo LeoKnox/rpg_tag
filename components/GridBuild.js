@@ -16,6 +16,7 @@ export default GridBuild = () => {
   const [initialXPosition, setInitialXPosition] = useState(0);
   const [initialYPosition, setInitialYPosition] = useState(0);
   useEffect(() => {
+    console.log(`use effect ${JSON.stringify(currentRoom)}`);
     setDivGridData(
       divGridData.map((room) =>
         room.id === currentRoomId ? currentRoom : room
