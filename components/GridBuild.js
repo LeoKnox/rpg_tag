@@ -55,6 +55,7 @@ export default GridBuild = () => {
     setIsMouseDown(true);
   };
   const handleMouseMove = (event) => {
+    console.log("MM");
     if (isMouseDown) {
       if (event.target.id || isRoom) {
         setIsRoom(true);
