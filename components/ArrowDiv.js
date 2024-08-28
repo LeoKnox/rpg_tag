@@ -18,9 +18,12 @@ export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
   return (
     <div style={{ display: "flex", color: "darkblue" }}>
       <button
-        onClick={() =>
-          setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] + 1 })
+        onMouseDown={() =>
+          setInterval(function () {
+            setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] + 1 });
+          }, 500)
         }
+        onMouseUp={clearInterval()}
       >
         +
       </button>
