@@ -14,17 +14,18 @@ export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
       console.log("inc");
     }
   };
+  const repeat = () => {
+    setInterval(function () {
+      return setCurrentRoom({
+        ...currentRoom,
+        [param]: currentRoom[param] + 1,
+      });
+    }, 1000);
+  };
 
   return (
     <div style={{ display: "flex", color: "darkblue" }}>
-      <button
-        onMouseDown={() =>
-          setInterval(function () {
-            setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] + 1 });
-          }, 500)
-        }
-        onMouseUp={clearInterval()}
-      >
+      <button onMouseDown={repeat} onMouseUp={clearInterval()}>
         +
       </button>
       <button>-</button>
