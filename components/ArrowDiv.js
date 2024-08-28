@@ -42,6 +42,7 @@ export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
   return (
     <div style={{ display: "flex", color: "darkblue" }}>
       <button>+</button>
+      <button>-</button>
       <div
         id="decrease"
         className="arrowButton"
