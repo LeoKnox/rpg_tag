@@ -1,64 +1,80 @@
-import { useState, useEffect } from "react";
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
 
-export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
-  const [timerActive, setTimerActive] = useState(false);
-  var holdLoop;
+.column {
+  display: grid;
+  overflow: clip;
+  height: 100%;
+}
 
-  const start = (e) => {
-    /*setInterval(
-      setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] - 1 }),
-      1000
-    );*/
-    setInterval(() => updateValue(e.target.id), 1000);
-    /*setTimerActive(true);
-    let i = 0;
-    let temp = e.target.id;
-    while (i < 10) {
-      updateValue(temp);
-      i++;
-    }*/
-  };
-  const updateValue = (temp) => {
-    console.log("red " + temp);
+.gridBuildRoom {
+  z-index: 5;
+}
 
-    if (temp == "decrease") {
-      setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] - 1 });
-      console.log("dec");
-    } else if (temp == "increase") {
-      setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] + 1 });
-      console.log("inc");
-    }
-  };
-  function repeat(param) {
-    timer = setInterval(param, 1000);
-    //param();
-  }
-  const stopTimer = () => {
-    //setInterval(() => {}, 0);
-    clearInterval(holdLoop);
-    setTimerActive(false);
-    console.log("stop" + timerActive);
-  };
-  return (
-    <div style={{ display: "flex", color: "darkblue" }}>
-      <button>+</button>
-      <div
-        id="decrease"
-        className="arrowButton"
-        onClick={start}
-        onMouseDown={(e) => start(e)}
-        onMouseUp={stopTimer}
-      >
-        ↓
-      </div>
-      <div
-        id="increase"
-        className="arrowButton"
-        onMouseDown={(e) => start(e)}
-        onMouseUp={stopTimer}
-      >
-        ↑
-      </div>
-    </div>
-  );
-};
+.arrowButton {
+  background-color: lightblue;
+  border: 1px solid blue;
+  width: 1.4em;
+}
+input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.number-input {
+  border: 2px solid #ddd;
+  display: inline-flex;
+}
+
+.number-input,
+.number-input * {
+  box-sizing: border-box;
+}
+
+.number-input button {
+  outline: none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  margin: 0;
+  position: relative;
+}
+
+.number-input button:before,
+.number-input button:after {
+  display: inline-block;
+  position: absolute;
+  content: "";
+  width: 1rem;
+  height: 2px;
+  background-color: #212121;
+  transform: translate(-50%, -50%);
+}
+.number-input button.plus:after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.number-input input[type="number"] {
+  font-family: sans-serif;
+  max-width: 5rem;
+  padding: 0.5rem;
+  border: solid #ddd;
+  border-width: 0 2px;
+  font-size: 2rem;
+  height: 3rem;
+  font-weight: bold;
+  text-align: center;
+}
