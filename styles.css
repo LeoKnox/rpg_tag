@@ -1,35 +1,64 @@
-.App {
-  font-family: sans-serif;
-  text-align: center;
-}
+import { useState, useEffect } from "react";
 
-.column {
-  display: grid;
-  overflow: clip;
-  height: 100%;
-}
+export default ArrowDiv = ({ param, currentRoom, setCurrentRoom }) => {
+  const [timerActive, setTimerActive] = useState(false);
+  var holdLoop;
 
-.gridBuildRoom {
-  z-index: 5;
-}
+  const start = (e) => {
+    /*setInterval(
+      setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] - 1 }),
+      1000
+    );*/
+    setInterval(() => updateValue(e.target.id), 1000);
+    /*setTimerActive(true);
+    let i = 0;
+    let temp = e.target.id;
+    while (i < 10) {
+      updateValue(temp);
+      i++;
+    }*/
+  };
+  const updateValue = (temp) => {
+    console.log("red " + temp);
 
-.arrowButton {
-  background-color: lightblue;
-  border: 1px solid blue;
-  width: 1.4em;
-}
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  opacity: 1;
-}
-
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: inner-spin-button !important;
-  width: 25px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-}
+    if (temp == "decrease") {
+      setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] - 1 });
+      console.log("dec");
+    } else if (temp == "increase") {
+      setCurrentRoom({ ...currentRoom, [param]: currentRoom[param] + 1 });
+      console.log("inc");
+    }
+  };
+  function repeat(param) {
+    timer = setInterval(param, 1000);
+    //param();
+  }
+  const stopTimer = () => {
+    //setInterval(() => {}, 0);
+    clearInterval(holdLoop);
+    setTimerActive(false);
+    console.log("stop" + timerActive);
+  };
+  return (
+    <div style={{ display: "flex", color: "darkblue" }}>
+      <button>+</button>
+      <div
+        id="decrease"
+        className="arrowButton"
+        onClick={start}
+        onMouseDown={(e) => start(e)}
+        onMouseUp={stopTimer}
+      >
+        ↓
+      </div>
+      <div
+        id="increase"
+        className="arrowButton"
+        onMouseDown={(e) => start(e)}
+        onMouseUp={stopTimer}
+      >
+        ↑
+      </div>
+    </div>
+  );
+};
